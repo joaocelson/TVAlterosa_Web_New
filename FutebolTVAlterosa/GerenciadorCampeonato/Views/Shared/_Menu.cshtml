@@ -1,0 +1,28 @@
+﻿<li class="start">
+    @Conquer.MenuTitle("Menu", "fa-home", Url.Action("Index", "AdminHome"))
+</li>
+@if (User.Identity.Name.ToString() == "joaocelson@gmail.com")
+{
+    <li style="display: block">
+        @Conquer.MenuTitle("Times", "fa-tags", Url.Action("Consultar", "TimeWeb"))
+    </li>
+
+    <li style="display: block">
+        @Conquer.MenuTitle("Campeonato", "fa-life-ring", Url.Action("Consultar", "CampeonatoWeb"))
+    </li>
+}
+<li style="display: block">
+    @Conquer.MenuTitle("Jogadores", "fa-user", Url.Action("Consultar", "JogadorWeb"))
+</li>
+<li style="display: block">
+    @Conquer.MenuTitle("Partidas", "fa-flag", Url.Action("Consultar", "PartidaWeb"))
+</li>
+<li style="display: block">
+    @Conquer.MenuTitle("Resultado Partidas", "fa-child", Url.Action("Consultar", "ResultadoPartidaWeb"))
+</li>
+<li style="display: block">
+    @Conquer.MenuTitle("Artilharia", "fa-star", Url.Action("Consultar", "ArtilhariaWeb"))
+</li>
+<li style="display: block">
+    @Conquer.MenuTitle("Enviar Notificação App", "fa-envelope", Url.Action("EnviarMensagem", "Home"))
+</li>

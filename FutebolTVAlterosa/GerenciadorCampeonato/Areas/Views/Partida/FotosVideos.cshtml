@@ -1,0 +1,89 @@
+﻿@model Campeonato.Dominio.Partida
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+}
+
+<h2>FotosVideos</h2>
+
+@using (Html.BeginForm("FotosVideos", "Galeria"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Partida</legend>
+
+        @Html.HiddenFor(model => model.Id)
+
+        @Html.HiddenFor(model => model.IdCampeonato)
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TimeMandante)
+            @Html.LabelFor(model => model.InverterMandante)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TimeMandante, null, htmlFieldName: "name=txtNomeMandante")
+            @Html.EditorFor(model => model.IdTimeMandante)
+            @Html.ValidationMessageFor(model => model.TimeMandante)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.TimeVisitante)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.TimeVisitante, null, htmlFieldName: "name=txtNomeVisitante")
+            @Html.EditorFor(model => model.IdTimeVisitante)
+            @Html.ValidationMessageFor(model => model.TimeVisitante)
+        </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.LocalPartida)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.LocalPartida)
+            @Html.ValidationMessageFor(model => model.LocalPartida)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DataPartida)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataPartida)
+            @Html.ValidationMessageFor(model => model.DataPartida)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Rodada)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Rodada)
+            @Html.ValidationMessageFor(model => model.Rodada)
+        </div>
+        <div class="editor-label">
+            Ou Caminho Foto ou Vídeo:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.EscudoPequenoMandante)
+        </div>
+
+        <div class="editor-label">
+            Descrição:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.NomeCampeonato)
+        </div>
+
+        <div class="editor-label">
+            Se for Vídeo digite 1, senão digite 0:
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GolMandante)
+        </div>
+        <p>
+            <input class="btn btn-primary btn-large" type="submit" value="Salvar" />
+        </p>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+</div>

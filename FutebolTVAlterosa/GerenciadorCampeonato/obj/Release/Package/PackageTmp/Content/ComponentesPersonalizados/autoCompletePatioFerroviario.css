@@ -1,0 +1,18 @@
+﻿.autoCompletePatioFerroviarioContent{
+    position:relative;
+    height: 40px;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+}
+
+.autoCompletePatioFerroviarioTitle {
+    font-weight:bold;
+    font-size:12px;
+}
+
+.autoCompletePatioFerroviarioDesc {
+    position: absolute;
+    bottom: 0;
+    left: 2px;
+    font-size: 10px;
+}

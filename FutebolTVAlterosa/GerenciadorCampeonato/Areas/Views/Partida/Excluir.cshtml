@@ -1,0 +1,84 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Excluir</h2>
+
+    <h3>Are you sure you want to delete this?</h3>
+    <fieldset>
+        <legend>Partida</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.IdTimeMandante)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IdTimeMandante)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.IdTimeVisitante)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.IdTimeVisitante)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.GolMandante)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.GolMandante)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.GolVisitante)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.GolVisitante)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.LocalPartida)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.LocalPartida)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DataPartida)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DataPartida)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DataPartidaRemarcada)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DataPartidaRemarcada)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Remarcada)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Remarcada)
+        </div>
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Rodada)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Rodada)
+        </div>
+    </fieldset>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        <p>
+            <input class="btn btn-primary btn-large" type="submit" value="Deletar" /> |
+            @Html.ActionLink("Voltar", "Index")
+        </p>
+    }
+</div>

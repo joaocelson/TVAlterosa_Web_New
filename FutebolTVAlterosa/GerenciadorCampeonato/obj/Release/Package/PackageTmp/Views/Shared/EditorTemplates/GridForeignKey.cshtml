@@ -1,0 +1,11 @@
+﻿@model object
+@using Kendo.Mvc.UI
+
+@{
+    var campo = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    var itens = (SelectList) ViewData[campo + "_Data"];
+}
+
+@*@Html.Kendo().DropDownListFor(m => m).Name(campo).BindTo(itens).OptionLabel("Selecione um valor")*@
+@Html.Kendo().DropDownListFor(m => m).Name(campo).BindTo(itens)
+

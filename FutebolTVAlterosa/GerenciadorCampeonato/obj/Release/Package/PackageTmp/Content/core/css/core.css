@@ -1,0 +1,80 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+    font-family: 'mission_gothiclight', Helvetica, Tahoma, sans-serif;
+    font-size: 14px;
+}
+
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+.menu-title {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 26px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold !important;
+    color: #000;
+}
+
+.header {
+    background: #00325A;
+}
+
+.page-sidebar-menu > li.active {
+    border-color: #FFCC00;
+}
+
+.app-title {
+    color: #fff;
+    font-weight: 600;
+    font-family: Tahoma;
+    left: 120px;
+    position: absolute;
+    top: 12px;
+    text-shadow: 0 0 2px #fff;
+}
+
+.label-version {
+    margin-left: 28px;
+    font-weight: 600;
+    font-size: 10px;
+}
+
+.footer-copyright {
+    font-weight: bold;
+    font-size: 14px;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+.h1,
+.h2,
+.h3,
+.h4,
+.h5,
+.h6 {
+    font-family: 'mission_gothiclight', Helvetica, Tahoma, sans-serif;
+}
+
+.page-title {
+    font-family: 'mission_gothicthin', Helvetica, Tahoma, sans-serif;
+}
+
+.k-tabstrip-items .k-state-active {
+    border-top: 3px solid #FFCC00 !important;
+}
+
+.header.navbar-fixed-top {
+    webkit-box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow: 0px 3px 8px 0px rgba(50, 50, 50, 0.5);
+    box-shadow: 0px 3px 5px 0px rgba(50, 50, 50, 0.3);
+}

@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Campeonato.Dominio.Bolao>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+    }
+
+    <table class="table table-striped">
+
+
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {foreach (var item in Model)
+{
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Nome)
+            </td>
+            <td>
+                @Html.ActionLink("Participar", "Participar", new { id = item.Id })
+            </td>
+            <td>
+                @Html.ActionLink("Lista Classificação", "VencedorRodada", new { id = item.Id })
+            </td>
+        </tr>
+        
+        }
+        <tr>
+            <td>@Html.ActionLink("Regras Participação", "Regras")</td>
+            <td></td>
+            <td></td>
+        </tr>
+}
+
+
+        @if (!HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            foreach (var item in Model)
+{<tr>
+              <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    
+                    <td>
+                        @Html.ActionLink("Lista Classificação", "VencedorRodada", new { id = item.Id })
+                    </td>
+                </tr>
+               
+        }
+         <tr>
+                    <td>@Html.ActionLink("Regras Participação", "Regras")</td>
+                    <td></td>
+                </tr>
+            <tr>
+                <td>@Html.ActionLink("Cadastrar Usuário", "CadastrarUsuario", new { id = 1 })</td>
+                <td></td>
+            </tr>
+        }
+    </table>
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>

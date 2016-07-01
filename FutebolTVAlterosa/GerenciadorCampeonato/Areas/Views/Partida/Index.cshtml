@@ -1,0 +1,119 @@
+﻿@model IEnumerable<Campeonato.Dominio.Partida>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <div class="row-fluid">
+
+        <h2>Partidas</h2>
+
+        <p>
+            @Html.ActionLink("Nova Partida", "Cadastrar")
+        </p>
+
+        @using (Html.BeginForm("GerarPartidas", "Partida", FormMethod.Post,
+                                      new { enctype = "multipart/form-data" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+            @Html.DropDownList("MeusCampeonatos", (System.Web.Mvc.SelectList)ViewBag.DropDownValues)
+
+            <fieldset>
+                <legend>Partida</legend>
+                <p>
+                    <input class="btn btn-primary btn-large" type="submit" value="GerarPartidas" name="btnGerarPaertidas" />
+                </p>
+            </fieldset>
+        }
+
+
+        <table class="table">
+            <tr>
+                <th>
+                    Mandante
+                </th>
+
+                <th>
+                    
+                </th>
+                <th>
+                    X
+                </th>
+                <th>
+                    
+                </th>
+                <th>
+                    Visitante
+                </th>
+                <th>
+                    Local
+                </th>
+                <th>
+                    Data
+                </th>
+                <th>
+                    Data Remarcada
+                </th>
+                <th>
+                    Remarcada
+                </th>
+                <th>
+                    Rodada
+                </th>
+                <th>
+                    Pontuada
+                </th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeMandante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GolMandante)
+                    </td>
+                    <td>
+                        X
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GolVisitante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.TimeVisitante)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.LocalPartida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPartida)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataPartidaRemarcada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Remarcada)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Rodada)ª
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PontosComputados)
+                    </td>
+                    <td width="100%">
+                        @Html.ActionLink("Resultado", "Resultado", new { id = item.Id }) |
+                        @Html.ActionLink("ComentarPartidaOnline", "ComentarPartidaOnline", new { id = item.Id }) |
+                        @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                        @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                        @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+                        @Html.ActionLink("FotosVideos", "FotosVideos", new { id = item.Id })
+
+
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

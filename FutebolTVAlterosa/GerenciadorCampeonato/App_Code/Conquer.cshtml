@@ -1,0 +1,15 @@
+﻿@helper MenuTitle(string title, string icon = "", string href = "javascript:;")
+{
+    <a href="@href">
+        @if (!String.IsNullOrEmpty(icon))
+        {
+            <i class="fa @icon"></i>
+        }
+        <span class="title"> @title</span>
+        @if ("javascript:;".Equals(href))
+        {
+            <span class="arrow "></span>
+        }
+        <span class="selected"></span>
+    </a>
+}

@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="IIS Web Application Name" description="" value="Ibititec" tags="IisApp">
+    <parameterEntry kind="ProviderPath" scope="IisApp" match="^C:\\WORKSPLACE_IBITITEC\\TVAlterosa_Web\\FutebolTVAlterosa\\GerenciadorCampeonato\\obj\\Release\\Package\\PackageTmp$" />
+    <parameterEntry kind="ProviderPath" scope="setAcl" match="^C:\\WORKSPLACE_IBITITEC\\TVAlterosa_Web\\FutebolTVAlterosa\\GerenciadorCampeonato\\obj\\Release\\Package\\PackageTmp$" />
+  </parameter>
+  <parameter name="CampeonatoConfig-Web.config Connection String" description="" value="Data Source=52.37.37.207\SQLEXPRESS;Initial Catalog=TVALTEROSA;Integrated Security=False;User Id=sa;Password=J0a0cels0n" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\WORKSPLACE_IBITITEC\\TVAlterosa_Web\\FutebolTVAlterosa\\GerenciadorCampeonato\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='CampeonatoConfig']/@connectionString" />
+  </parameter>
+  <parameter name="GerenciadorCampeonato.Models.ApplicationDbContext-Web.config Connection String" description="" value="GerenciadorCampeonato.Models.ApplicationDbContext_ConnectionString" tags="">
+    <parameterEntry kind="XmlFile" scope="C:\\WORKSPLACE_IBITITEC\\TVAlterosa_Web\\FutebolTVAlterosa\\GerenciadorCampeonato\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='GerenciadorCampeonato.Models.ApplicationDbContext']/@connectionString" />
+  </parameter>
+</parameters>

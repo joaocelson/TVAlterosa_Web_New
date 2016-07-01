@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{D357734C-EC39-46CE-858B-E495210644B5}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CORE.Componentes</RootNamespace>
+    <AssemblyName>CORE.Componentes</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile />
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Elmah, Version=1.2.14706.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\elmah.corelibrary.1.2.2\lib\Elmah.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Kendo.Mvc">
+      <HintPath>..\..\..\..\..\..\Program Files (x86)\Telerik\UI for ASP.NET MVC Q2 2015\wrappers\aspnetmvc\Binaries\Mvc5\Kendo.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="NuGet.Configuration, Version=3.3.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\NuGet.Configuration.3.3.0\lib\net45\NuGet.Configuration.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Globalization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Helpers, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=5.2.3.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.5.2.3\lib\net45\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.3.2.3\lib\net45\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=3.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.3.2.3\lib\net45\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Personalizados\AutoComplete\Interfaces\IAutoCompleteProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteTipoVagaoProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteMercadoriaProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteFluxoTrptProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteFamiliaPrefixoTremProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompletePatioFerroviarioProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompletePessoaJuridicaProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteTerminalFerroviario.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteTremProvider.cs" />
+    <Compile Include="Personalizados\AutoComplete\Providers\AutoCompleteVeiculoFerroviarioProvider.cs" />
+    <Compile Include="Personalizados\HtmlExtensions.cs" />
+    <Compile Include="Personalizados\AutoComplete\Helpers\ResourcesHelper.cs" />
+    <Compile Include="Personalizados\Timeline\Enums\TimelineColor.cs" />
+    <Compile Include="Personalizados\Timeline\Helpers\TimelineHelper.cs" />
+    <Compile Include="Personalizados\Timeline\Models\TimelineItem.cs" />
+    <Compile Include="HtmlRazorExtensao.cs" />
+    <Compile Include="KendoGridMvc.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompletePatioFerroviarioTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteTerminalFerroviarioTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteTremTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteVeiculoFerroviarioTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompletePessoaJuridicaTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteFluxoTrptTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteFamiliaPrefixoTremTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteMercadoriaTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Personalizados\AutoComplete\Templates\_autoCompleteTipoVagaoTemplate.tmpl.htm" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="App_Readme\Elmah.txt" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Campeonato.Dominio.Time>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+    <h2>Times</h2>
+
+    <div class="row-fluid">
+        <table>
+            <tr>
+                <th>
+
+                </th>
+                <th>
+
+                </th>
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        <div class="display-label">
+                            <img src="~/Content/images/escudo/@Model.EscudoPequeno" height="100">
+                        </div>
+                    </td>
+                    <td>
+                        @Html.ActionLink(item.Nome.ToString(), "Detalhes", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+
+        </table>
+    </div>

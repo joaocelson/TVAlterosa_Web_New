@@ -1,0 +1,38 @@
+﻿@model Campeonato.Dominio.Campeonatos
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Detalhes</h2>
+
+    <fieldset>
+        <legend>Campeonatos</legend>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.Nome)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Nome)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.DataInicio)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.DataInicio)
+        </div>
+
+        <div class="display-label">
+            @Html.DisplayNameFor(model => model.QuantidadeTime)
+        </div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.QuantidadeTime)
+        </div>
+    </fieldset>
+    <p>
+        @Html.ActionLink("Editar", "Editar", new { id = Model.Id }) |
+        @Html.ActionLink("Voltar", "Index")
+    </p>
+</div>

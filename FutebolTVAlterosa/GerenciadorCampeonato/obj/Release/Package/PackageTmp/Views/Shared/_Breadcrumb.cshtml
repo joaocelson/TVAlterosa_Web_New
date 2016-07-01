@@ -1,0 +1,26 @@
+﻿@if(ViewBag.Breadcrumbs != null && (ViewBag.Breadcrumbs as List<KeyValuePair<string, string>>).Count > 0)
+{ 
+    <ul class="page-breadcrumb breadcrumb">
+        <li>
+            <i class="fa fa-home"></i>
+            <a href="/">Inicial</a>
+            <i class="fa fa-angle-right"></i>
+        </li>
+        @{
+            var breadCrumbs = ViewBag.Breadcrumbs as List<KeyValuePair<string, string>>;
+        
+            for (int i = 0; i < breadCrumbs.Count; i++)
+            {
+                <li>
+                    <a href="@breadCrumbs[i].Key">@breadCrumbs[i].Value</a>
+                                
+                    @if (i < (breadCrumbs.Count - 1))
+                    {                        
+                        <i class="fa fa-angle-right"></i>
+                    }
+                                
+                </li>  
+            }           
+        }    
+    </ul>
+}

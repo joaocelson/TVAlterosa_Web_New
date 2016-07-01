@@ -1,0 +1,500 @@
+﻿/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+svg text {
+    font-family: 'mission_gothicthin' !important;
+    font-size: 14px !important;    
+}
+
+.k-grid {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 0.85em;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    /*max-width: 280px;
+    max-width: 17em;*/
+}
+
+.k-grid-details,
+.k-grid-details:hover,
+.k-grid-details:active {
+    background-color: #428BCA;
+    color: #fff;
+    border-color: #357ebd;
+}
+
+/* styles for validation helpers */
+.field-validation-error {
+    color: #b94a48;
+}
+
+.field-validation-valid {
+    display: none;
+}
+
+input.input-validation-error {
+    border: 1px solid #b94a48;
+}
+
+input[type="checkbox"].input-validation-error {
+    border: 0 none;
+}
+
+.validation-summary-errors {
+    color: #b94a48;
+}
+
+.validation-summary-valid {
+    display: none;
+}
+
+.k-grid td {
+    white-space: nowrap !important;
+    padding: 0.3em;
+}
+
+.k-grid-filter.k-state-active {
+    background-color: #ccc;
+}
+
+    .k-grid-filter.k-state-active span.k-filter {
+        background-position: -32px -96px;
+    }
+
+.k-grid-edit,
+.k-grid-delete,
+.k-grid-add,
+.k-grid-clear,
+.k-grid-Limpar {
+    color: #fff;
+}
+
+    .k-grid-edit:hover,
+    .k-grid-delete:hover,
+    .k-grid-add:hover,
+    .k-grid-clear:hover,
+    .k-grid-Limpar:hover,
+    .k-grid-edit:active,
+    .k-grid-delete:active,
+    .k-grid-add:active,
+    .k-grid-clear:active,
+    .k-grid-Limpar:active,
+    .k-grid-edit:focus,
+    .k-grid-delete:focus,
+    .k-grid-add:focus,
+    .k-grid-clear:focus,
+    .k-grid-Limpar:focus {
+        color: #fff;
+    }
+
+.k-button-export-excel:hover,
+.k-button-export-excel:active,
+.k-button-export-excel:focus {
+}
+
+.k-grid-Excel:hover,
+.k-grid-Excel:active,
+.k-grid-Excel:focus {
+}
+
+.k-grid tbody .k-button, .k-ie8 .k-grid tbody button.k-button {
+    min-width: 0;
+    font-size: .8em;
+}
+
+.k-grid-edit {
+    background-color: #f0ad4e;
+    border-color: #eea236;
+}
+
+    .k-grid-edit > span,
+    .k-grid-delete > span {
+        display: none;
+    }
+
+    .k-grid-edit:hover,
+    .k-grid-edit:active {
+        background-color: #eea236;
+        border-color: #eea236;
+    }
+
+.k-grid-delete {
+    background-color: #d9534f;
+    border-color: #d43f3a;
+}
+
+    .k-grid-delete:hover,
+    .k-grid-delete:active {
+        background-color: #d43f3a;
+        border-color: #d43f3a;
+    }
+
+.k-grid-add {
+    background-color: #5cb85c;
+    border-color: #4cae4c;
+}
+
+    .k-grid-add:hover,
+    .k-grid-add:active,
+    .k-grid-add:focus {
+        background-color: #4cae4c;
+        border-color: #4cae4c;
+    }
+
+.k-grid-clear,
+.k-grid-Limpar {
+    background-color: #5bc0de;
+    border-color: #46b8da;
+}
+
+    .k-grid-clear:hover,
+    .k-grid-clear:active,
+    .k-grid-clear:focus,
+    .k-grid-Limpar:hover,
+    .k-grid-Limpar:active,
+    .k-grid-Limpar:focus {
+        background-color: #46b8da;
+        border-color: #46b8da;
+    }
+
+    /*
+ * Sobrescrevendo modelo de botões com a tag custom
+ */
+    .k-button-custom.k-button-icontext span,
+    .k-grid-Limpar span {
+        background-image: url("Kendo/2014.2.716/Bootstrap/sprite.png");
+        border-color: transparent;
+        background-color: transparent;
+        margin-bottom: -5px;
+        margin-top: -7px;
+        vertical-align: middle;
+        margin-left: -0.3rem;
+        margin-right: 0.3rem;
+        opacity: 1;
+        background-repeat: no-repeat;
+        display: inline-block;
+        font-size: 0;
+        height: 16px;
+        line-height: 0;
+        overflow: hidden;
+        text-align: center;
+        width: 16px;
+    }
+
+/*
+ * Inclusão de ícone de botão de exportar para excel
+ */
+.k-button-icontext.k-button-export-excel span {
+    background-image: url("img/excel.png");
+}
+
+.k-button-icontext.k-grid-Excel span {
+    background-image: url("img/excel.png");
+    border-color: transparent;
+    background-color: transparent;
+    margin-bottom: -5px;
+    margin-top: -7px;
+    vertical-align: middle;
+    margin-left: -0.3rem;
+    margin-right: 0.3rem;
+    opacity: 1;
+    background-repeat: no-repeat;
+    display: inline-block;
+    font-size: 0;
+    height: 16px;
+    line-height: 0;
+    overflow: hidden;
+    text-align: center;
+    width: 16px;
+}
+
+/*
+ * Inclusão de ícone personalizado para botão com limpador de filtros
+ */
+.k-grid-clear span,
+.k-grid-Limpar span {
+    background-position: -32px -96px;
+}
+
+/*
+ * Pequeno ajuste na exibição de botão toolbar da grid
+ */
+.k-toolbar .k-button {
+    text-align: left;
+    min-width: 82px;
+}
+
+input.k-textbox {
+    /*max-width: 220px;*/
+    width: 100%;
+}
+
+textarea.k-textbox {
+    min-height: 4em;
+    max-height: 9em;
+    /*Equivalente a 3 linhas*/
+    height: 5.3em;
+    width: 100%;
+    resize: vertical;
+}
+
+    textarea.k-textbox textarea.k-textbox-free {
+        /*Equivalente a 3 linhas*/
+        height: auto;
+        width: 100%;
+        resize: both;
+    }
+
+.menu-title {
+    margin: 0;
+    padding: 0;
+    padding-top: 15px;
+    text-align: center;
+    font-size: 26px;
+    font-family: Helvetica, sans-serif;
+    font-weight: bold !important;
+    color: #000;
+}
+
+.header {
+    background: #00325A;
+}
+
+.page-sidebar-menu > li.active {
+    border-color: #FFCC00;
+}
+
+.bs-glyphicons li {
+    cursor: pointer;
+}
+
+.app-title {
+    color: #fff;
+    font-weight: 600;
+    font-family: Tahoma;
+    left: 120px;
+    position: absolute;
+    top: 12px;
+    text-shadow: 0 0 2px #fff;
+}
+
+.form-horizontal .form-group .control-label {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.form-horizontal .form-group [class^='col-'] {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+.k-grid-details,
+.k-grid-details:hover,
+.k-grid-details:active {
+    background-color: #428BCA;
+    color: #fff;
+    border-color: #357ebd;
+}
+
+.k-grid-clear,
+.k-grid-Limpar {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+    .k-grid-clear:hover,
+    .k-grid-clear:active,
+    .k-grid-Limpar:hover,
+    .k-grid-Limpar:active {
+        background-color: #EBEBEB;
+        border-color: #ADADAD;
+        color: #333;
+    }
+
+.col-md-3, .col-md-4 {
+    padding-top: 5px;
+}
+
+.btrp-detail-inputs {
+    margin-left: 10%;
+    margin-right: 10%;
+}
+
+.btrp-detail-labels {
+    margin-left: 10%;
+}
+
+.btrp-links-consulta {
+    margin-left: 5%;
+}
+
+/*body, label {
+    font-size: 12px;
+}*/
+
+.portlet > .portlet-title .caption {
+    font-size: 14px;
+}
+
+input[readonly] {
+    cursor: default;
+}
+
+
+/* Layout do ToolTip*/
+#tooltip {
+    text-align: center;
+    color: gray;
+    background: gray;
+    position: absolute;
+    z-index: 100;
+    padding: 15px;
+    -moz-border-radius: 7px;
+    -webkit-border-radius: 7px;
+    border-radius: 7px;
+}
+    /* triangle decoration */
+    /*#tooltip:after {
+            width: 0;
+            height: 0;
+            border-left: 10px solid transparent;
+            border-right: 10px solid transparent;
+            border-top: 10px solid #111;
+            content: '';
+            position: absolute;
+            left: 50%;
+            bottom: -10px;
+            margin-left: -10px;
+        }*/
+
+    #tooltip.top:after {
+        border-top-color: transparent;
+        border-bottom: 10px solid #111;
+        top: -20px;
+        bottom: auto;
+    }
+
+    #tooltip.left:after {
+        left: 10px;
+        margin: 0;
+    }
+
+    #tooltip.right:after {
+        right: 10px;
+        left: auto;
+        margin: 0;
+    }
+
+/* FIM Layout do ToolTip*/
+
+
+
+
+
+/*ajuste bootstrap dentro do tabstrip kendo*/
+
+/* reset everything to the default box model */
+*,
+:before,
+:after {
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: border-box;
+}
+
+/* set a border-box model only to elements that need it */
+
+.form-control, /* if this class is applied to a Kendo UI widget, its layout may change */
+.container,
+.container-fluid,
+.row,
+.col-xs-1,
+.col-sm-1,
+.col-md-1,
+.col-lg-1,
+.col-xs-2,
+.col-sm-2,
+.col-md-2,
+.col-lg-2,
+.col-xs-3,
+.col-sm-3,
+.col-md-3,
+.col-lg-3,
+.col-xs-4,
+.col-sm-4,
+.col-md-4,
+.col-lg-4,
+.col-xs-5,
+.col-sm-5,
+.col-md-5,
+.col-lg-5,
+.col-xs-6,
+.col-sm-6,
+.col-md-6,
+.col-lg-6,
+.col-xs-7,
+.col-sm-7,
+.col-md-7,
+.col-lg-7,
+.col-xs-8,
+.col-sm-8,
+.col-md-8,
+.col-lg-8,
+.col-xs-9,
+.col-sm-9,
+.col-md-9,
+.col-lg-9,
+.col-xs-10,
+.col-sm-10,
+.col-md-10,
+.col-lg-10,
+.col-xs-11,
+.col-sm-11,
+.col-md-11,
+.col-lg-11,
+.col-xs-12,
+.col-sm-12,
+.col-md-12,
+.col-lg-12 {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+/*Fim ajuste bootstrap dentro do tabstrip kendo*/
+
+.page-title {
+    font-family: 'mission_gothicthin', Helvetica, Tahoma, sans-serif;
+}
+
+.bootstrap-col-right-bottom-delimiter {
+    border-right-color: #DDDDDD;
+    border-right-width: 1px;
+    border-right-style: solid;
+    border-bottom-color: #DDDDDD;
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+    padding-bottom: 10px;
+    /*padding-top: 10px;*/
+}
+
+.bootstrap-col-right-delimiter {
+    border-right-color: #DDDDDD;
+    border-right-width: 1px;
+    border-right-style: solid;
+    padding-bottom: 10px;
+    /* padding-top: 10px;*/
+}
+
+.editor-field .k-dropdown {
+   width : 100% !important;
+}

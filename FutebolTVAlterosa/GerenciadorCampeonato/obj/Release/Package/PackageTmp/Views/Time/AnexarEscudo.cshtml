@@ -1,0 +1,76 @@
+﻿@using CORE.Componentes
+@using Kendo.Mvc.UI
+@using System.Web
+@model IEnumerable<Campeonato.Dominio.Time_Web>
+
+@{
+    ViewBag.Title = "Manutenção Times";
+}
+
+@{
+    ViewBag.Title = "Manutenção Times";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("/AdminHome/Index", "Home"));
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+<div class="row" style="padding-left: 20px; padding-right: 20px;">
+    <div class=" portlet">
+
+        <div class="portlet-title" id="tituloPesquisa">
+            <div class="caption">
+                <i class="fa fa-reorder"></i>
+                Upload Escudo
+            </div>
+
+            <div class="tools">
+                <a href="javascript:;" class="collapse" id="imagemCollapse"></a>
+            </div>
+        </div>
+        <div class="portlet-body form" id="camposPesquisa">
+            <div class="form-body">
+                <div class="row">
+                    <div class="col-md-4 col-sm-6 col-xs-12">
+                        <div class="btrp-detail-inputs">
+                            <form method="post" action='@Url.Action("Submit")' id="FrmImportar">
+                                <div class="demo-section">
+                                    @(Html.Kendo().Upload()
+                                          .Name("files")
+                                    )
+                                    @*<p>
+                                            <input type="submit" value="Submit" class="k-button" />
+                                        </p>*@
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="col-md-4 col-sm-6 col-xs-12"></div>
+                </div>
+            </div>
+            <div class="form-actions fluid right">
+                <img id="imgLoading" src="~/Content/img/loading.gif">
+                <button type="button" class="btn btn-success" onclick="onclickRegistrar()"><i class="fa fa-save"></i> Salvar Escudo </button>
+            </div>
+        </div>
+
+    </div>
+</div>
+<!-- END BODY -->
+<!-- BEGIN SCRIPTS -->
+<script>
+
+
+    function onclickRegistrar() {
+        hideErrorMessage();
+        hideSuccessMessage();
+        $('#imgLoading').show();
+        $("#FrmImportar").submit();
+        //RealizarImportacao();
+    }
+
+    $(document).ready(function () {
+        $('#imgLoading').hide();
+    });
+</script>
+

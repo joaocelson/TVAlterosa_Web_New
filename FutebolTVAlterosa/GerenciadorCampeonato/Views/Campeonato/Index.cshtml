@@ -1,0 +1,62 @@
+﻿@using CORE.Componentes
+@using Kendo.Mvc.UI
+@using System.Web
+@model IEnumerable<Campeonato.Dominio.Campeonato_Web>
+
+@{
+    ViewBag.Title = "Manutenção Campeonato";
+}
+
+@{
+    ViewBag.Title = "Manutenção Campeonato";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("/AdminHome/Index", "Home"));
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.MessageBoxes(TempData["successMessage"], Html.ValidationMessage(""))
+    </div>
+    <div class="col-md-12">
+        @(Html.KendoGrid<Campeonato.Dominio.Campeonato_Web>("campeonatoGrid")
+                .ToolbarLimpar("gridAllFilterReset")
+                //.ToolbarExportarExcel("Exportar", "Jogadores.xls")
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.Id).Visible(false);
+                    columns.Bound(p => p.Nome).Title("Nome").Width(200);
+                    columns.Bound(p => p.DataInicio).Title("Data Início").Width(100);                    
+                })
+                .Editable(ed =>
+                {
+                    ed.Mode(GridEditMode.PopUp)
+                        .Window(w => w.Title("Manutenção de Campeonato").Width(450));
+                })
+               .Pageable(i => i.PageSizes(new int[] { 25, 50, 100 }))                
+               .DataSource(dataSource =>
+               {
+                   dataSource
+                    .Ajax()
+                    .Sort(sort => sort.Add(p => p.Nome).Ascending())
+                    .PageSize(25)
+                    .Events(events => events.Error("error_handler").Sync("sync_handler").RequestEnd("onRequestEnd"))
+                    .Model(model =>
+                    {
+                        model.Id(p => p.Id);
+                    })
+                    .Read(read => read.Action("Ler", "CampeonatoWeb"))
+                    .Create(update => update.Action("Inserir", "CampeonatoWeb"))
+                    .Update(update => update.Action("Atualizar", "CampeonatoWeb"))
+                    .Destroy(update => update.Action("Apagar", "CampeonatoWeb"));
+               }))
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        hideErrorMessage();
+        hideSuccessMessage();
+    });
+</script>

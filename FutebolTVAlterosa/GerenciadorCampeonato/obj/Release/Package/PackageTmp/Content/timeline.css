@@ -1,0 +1,392 @@
+﻿/*Ajuste de layout Time Line*/
+.timeline > li .timeline-time span.date {
+    color: rgb(170, 170, 170);
+    font-size: 12px !important;
+    font-weight: 300;
+    display: block !important;
+}
+
+.timeline > li .timeline-time span.time {
+    line-height: 38px;
+    font-size: 28px !important;
+    font-weight: 300;
+}
+
+.timeline > li .timeline-body h2 {
+    padding: 0px 0px 5px;
+    font-size: 16px !important;
+    margin-top: 0px;
+    border-bottom-color: rgba(255, 255, 255, 0.3);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.timeline > li .timeline-content {
+    font-size: 10px !important;
+}
+
+.timeline > li .timeline-body a.nav-link {
+    padding: 0px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    /*font-size: 10px !important;*/
+    text-decoration: none;
+    margin-top: 2px !important;
+    display: inline-block;
+}
+
+.timeline > li .timeline-body span.data {
+    padding: 2px;
+    text-align: left;
+    color: rgb(255, 255, 255);
+    font-weight:bold;
+    /*font-size: 10px !important;*/
+    text-decoration: none;
+    margin-top: 2px !important;
+    display: inline-block;
+}
+
+.timeline > li .timeline-body img.timeline-img {
+    margin: 5px 10px 0px 0px;
+    width: 50px !important;
+    height: 50px !important;
+}
+
+.timeline > li .timeline-body .btn {
+    margin-top: 10px !important;
+}
+
+/*Fim do ajuste de layout Time Line*/
+
+/* CSS da timeline */
+
+.timeline {
+    list-style: none;
+    margin: 0px;
+    padding: 0px;
+    position: relative;
+}
+
+    .timeline::before {
+        background: rgb(204, 204, 204);
+        left: 20%;
+        top: 0px;
+        width: 9px;
+        bottom: 0px;
+        margin-left: -10px;
+        position: absolute;
+        content: "";
+    }
+
+    .timeline > li {
+        position: relative;
+    }
+
+        .timeline > li .timeline-time {
+            width: 15%;
+            text-align: right;
+            display: block;
+            position: absolute;
+        }
+
+            .timeline > li .timeline-time span {
+                text-align: right;
+                display: block;
+            }
+
+                .timeline > li .timeline-time span.date {
+                    color: rgb(170, 170, 170);
+                    font-size: 15px;
+                    font-weight: 300;
+                    display: block;
+                }
+
+                .timeline > li .timeline-time span.time {
+                    line-height: 32px;
+                    font-size: 38px;
+                    font-weight: 300;
+                }
+
+        .timeline > li .timeline-body {
+            margin: 0px 0px 15px 25%;
+            padding: 10px;
+            border-radius: 5px;
+            color: rgb(0, 0, 0);
+            font-weight: 300;
+            position: relative;
+        }
+
+            .timeline > li .timeline-body h2 {
+                padding: 0px 0px 5px;
+                font-size: 24px;
+                margin-top: 0px;
+                border-bottom-color: rgba(255, 255, 255, 0.3);
+                border-bottom-width: 1px;
+                border-bottom-style: solid;
+            }
+
+        .timeline > li .timeline-content {
+            font-size: 14px;
+        }
+
+.ie8 .timeline > li .timeline-body h2 {
+    border-bottom-color: rgb(238, 238, 238);
+    border-bottom-width: 1px;
+    border-bottom-style: solid;
+}
+
+.timeline > li .timeline-body img.timeline-img {
+    margin: 5px 10px 0px 0px;
+    width: 75px;
+    height: 75px;
+}
+
+.timeline > li .timeline-body img.pull-right {
+    margin-left: 10px;
+}
+
+.timeline > li .timeline-body a.nav-link {
+    padding: 0px;
+    text-align: left;
+    color: rgb(30, 30, 30);
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+.timeline > li .timeline-body span.data {
+    padding: 0px;
+    text-align: left;
+    color: rgb(30, 30, 30);
+    font-size: 14px;
+    text-decoration: none;
+    margin-top: 10px;
+    display: inline-block;
+}
+
+    .timeline > li .timeline-body a.nav-link:hover {
+        opacity: 0.5;
+    }
+
+.timeline > li .timeline-body .btn {
+    margin-top: 10px;
+}
+
+.timeline > li .timeline-body::after {
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent rgb(53, 148, 203) transparent transparent;
+    border-image: none;
+    top: 19px;
+    width: 0px;
+    height: 0px;
+    right: 100%;
+    position: absolute;
+    content: " ";
+    pointer-events: none;
+}
+
+.timeline > li .timeline-content::after {
+    line-height: 0;
+    display: table;
+    content: "";
+}
+
+.timeline > li .timeline-content::before {
+    line-height: 0;
+    display: table;
+    content: "";
+}
+
+.timeline > li .timeline-content::after {
+    clear: both;
+}
+
+.timeline > li .timeline-footer::after {
+    line-height: 0;
+    display: table;
+    content: "";
+}
+
+.timeline > li .timeline-footer::before {
+    line-height: 0;
+    display: table;
+    content: "";
+}
+
+.timeline > li .timeline-footer::after {
+    clear: both;
+}
+
+.timeline > li .timeline-icon {
+    background: #fff;
+    margin: 5px 0 0 -11px;
+    border-radius: 100px !important;
+    left: 20%;
+    top: 0;
+    width: 8px;
+    height: 25px;
+    text-align: center;
+    color: #fff;
+    text-transform: none;
+    line-height: 50px;
+    padding-right: 1px;
+    padding-bottom: 3px;
+    padding-left: 2px;
+    font-size: 1.4em;
+    font-style: normal;
+    font-variant: normal;
+    font-weight: normal;
+    position: absolute;
+    box-shadow: 0 0 0 9px #ccc;
+    -webkit-font-smoothing: antialiased;
+    -webkit-border-radius: 30px;
+    -moz-border-radius: 30px;
+    speak: none;
+}
+
+.timeline > li .timeline-icon > i {
+    font-size: 18px;
+}
+
+.timeline li.timeline-red .timeline-body::after {
+    border-right-color: rgb(224, 34, 34);
+}
+
+.timeline li.timeline-red .timeline-body {
+    background: rgb(224, 34, 34);
+}
+
+.timeline li.timeline-red .timeline-time span.time {
+    color: rgb(224, 34, 34);
+}
+
+.timeline li.timeline-yellow .timeline-body::after {
+    border-right-color: rgb(255, 245, 185);
+}
+
+.timeline li.timeline-yellow .timeline-body {
+    background: rgb(255, 245, 185);
+}
+
+.timeline li.timeline-yellow .timeline-time span.time {
+    color: rgb(255, 184, 72);
+}
+
+.timeline li.timeline-green .timeline-body::after {
+    border-right-color: rgb(220, 240, 220);
+}
+
+.timeline li.timeline-green .timeline-body {
+    background: rgb(220, 240, 220);
+}
+
+.timeline li.timeline-green .timeline-time span.time {
+    color: rgb(53, 170, 71);
+}
+
+.timeline li.timeline-blue .timeline-body::after {
+    border-right-color: rgb(201, 221, 255);
+}
+
+.timeline li.timeline-blue .timeline-body {
+    background: rgb(201, 221, 255);
+}
+
+.timeline li.timeline-blue .timeline-time span.time {
+    color: rgb(75, 141, 248);
+}
+
+.timeline li.timeline-purple .timeline-body::after {
+    border-right-color: rgb(255, 222, 200);
+}
+
+.timeline li.timeline-purple .timeline-body {
+    background: rgb(255, 222, 200);
+}
+
+.timeline li.timeline-purple .timeline-time span.time {
+    color: rgb(240, 120, 0);
+}
+
+.timeline li.timeline-grey .timeline-body::after {
+    border-right-color: rgb(220, 220, 220);
+}
+
+.timeline li.timeline-grey .timeline-body {
+    background: rgb(220, 220, 220);
+}
+
+.timeline li.timeline-grey .timeline-time span.time {
+    color: rgb(85, 85, 85);
+}
+
+@media all and (max-width:767px) {
+    timeline > li .timeline-time span.time {
+        font-size: 18px;
+    }
+
+    .timeline::before {
+        display: none;
+    }
+
+    .timeline > li .timeline-time {
+        padding: 0px 0px 15px;
+        width: 100%;
+        position: relative;
+    }
+
+        .timeline > li .timeline-time span {
+            text-align: left;
+        }
+
+    .timeline > li .timeline-body {
+        margin: 0px 0px 30px;
+        padding: 1em;
+    }
+
+        .timeline > li .timeline-body::after {
+            left: 20px;
+            top: -20px;
+            right: auto;
+        }
+
+    .timeline > li .timeline-icon {
+        margin: -55px 5px 0px 0px;
+        left: auto;
+        float: right;
+        position: relative;
+        display: none;
+    }
+
+    .timeline li.timeline-red .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(224, 34, 34);
+    }
+
+    .timeline li.timeline-blue .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(201, 221, 255);
+    }
+
+    .timeline li.timeline-green .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(220, 240, 220);
+    }
+
+    .timeline li.timeline-yellow .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(255, 245, 185);
+    }
+
+    .timeline li.timeline-purple .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(255, 222, 200);
+    }
+
+    .timeline li.timeline-grey .timeline-body::after {
+        border-right-color: transparent;
+        border-bottom-color: rgb(85, 85, 85);
+    }
+}

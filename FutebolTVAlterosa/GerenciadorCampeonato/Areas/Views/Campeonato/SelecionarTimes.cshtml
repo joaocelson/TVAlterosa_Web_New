@@ -1,0 +1,55 @@
+﻿@model  Campeonato.Dominio.TimeCampeonato
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Selecione os times</h2>
+
+    @using (Html.BeginForm("SelecionarTimes", "Campeonato"))
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <input type="text" name="idCampeonato" hidden="hidden" value="@Model.IdCampeonato">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    ID Time
+                </td>
+
+                <td>
+                    Time
+                </td>
+                <td>
+                    Selecionado
+                </td>
+
+            </tr>
+            @foreach (var item in Model.Times)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(model => item.Id)
+                    </td>
+
+                    <td>
+                        @Html.DisplayFor(model => item.Nome)
+                    </td>
+
+                    <td>
+                        @Html.CheckBox("" + item.Id)
+                    
+                    </td>
+
+                </tr>
+            }
+        </table>
+        <input class="btn btn-primary btn-large" type="submit" value="SelecionarTimes" />
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+

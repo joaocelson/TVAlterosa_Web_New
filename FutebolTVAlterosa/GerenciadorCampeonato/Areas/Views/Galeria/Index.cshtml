@@ -1,0 +1,35 @@
+﻿@model IEnumerable<string>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+    }
+    <div class="row-fluid">
+
+        <table class="table-striped" align="center" style="text-align:center" width="960">
+            <tr>
+                Data das Fotos
+            </tr>
+                @foreach (var item in Model)
+                {
+<tr>
+                    <td style="text-align:left">
+                        @Html.ActionLink(item, "Galeria", new { data = item })
+                    </td>
+                </tr>
+            }
+
+        </table><p>
+            <!--<a href="https://www.facebook.com/groups/602547396436819/#" target="_blank"><img src="~/Content/images/facebook.png" border="0" /></a>-->
+        </p>
+        <br />
+        <!--<h3>Fim de semana movimentado em nossos gramados!!!</h3>-->
+        <a href="~/Admin/Galeria/GaleriaBase"><img src="https://lh5.googleusercontent.com/-ZDzT420eQR4/U5aS_Q6reqI/AAAAAAAAQ5k/4cTiI4QLLhU/s394-no/Fotos+da+Partida.jpg" alt="Alternate Text" /></a>
+
+        <div style="text-align:center">
+
+            <a href="~/Admin/Galeria/GaleriaVeteranos"><img src="https://lh6.googleusercontent.com/PDk0SUh8TfdPeuT0c9acvW_S-IqA-owkLZDVepaYnlsA=w961-h549-no" alt="Campeão Veteranos 2014" /></a>
+        </div>
+
+    </div>
+
+

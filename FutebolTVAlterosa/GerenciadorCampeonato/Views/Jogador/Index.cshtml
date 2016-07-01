@@ -1,0 +1,65 @@
+﻿@using CORE.Componentes
+@using Kendo.Mvc.UI
+@using System.Web
+@model IEnumerable<Campeonato.Dominio.Jogador_Web>
+
+@{
+    ViewBag.Title = "Manutenção Jogadores";
+}
+
+@{
+    ViewBag.Title = "Manutenção Jogadores";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("/AdminHome/Index", "Home"));
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.MessageBoxes(TempData["successMessage"], Html.ValidationMessage(""))
+    </div>
+    <div class="col-md-12">
+        @(Html.KendoGrid<Campeonato.Dominio.Jogador_Web>("jogadorGrid")
+                .ToolbarLimpar("gridAllFilterReset")
+                //.ToolbarExportarExcel("Exportar", "Jogadores.xls")
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.Id).Visible(false);
+                    columns.Bound(p => p.Nome).Title("Nome").Width(200);
+                    columns.Bound(p => p.Posicao).Title("Posicao").Width(100);
+                    columns.Bound(p => p.Descricao).Title("Descricao").Width(200);
+                    columns.ForeignKey(c => c.Id_Time, (System.Web.Mvc.SelectList)ViewData["TimeControle_Data"]).Title("Time").Width(200);
+                    columns.ForeignKey(c => c.Id_Campeonato, (System.Web.Mvc.SelectList)ViewData["CampeonatoControle_Data"]).Title("Campeonato").Width(200);
+                })
+                .Editable(ed =>
+                {
+                    ed.Mode(GridEditMode.PopUp)
+                        .Window(w => w.Title("Manutenção de Jogadores").Width(450));
+                })
+               .Pageable(i => i.PageSizes(new int[] { 25, 50, 100 }))
+               .DataSource(dataSource =>
+               {
+                   dataSource
+                    .Ajax()
+                    .Sort(sort => sort.Add(p => p.Nome).Ascending())
+                    .PageSize(25)
+                    .Events(events => events.Error("error_handler").Sync("sync_handler").RequestEnd("onRequestEnd"))
+                    .Model(model =>
+                    {
+                        model.Id(p => p.Id);
+                    })
+                    .Read(read => read.Action("Ler", "JogadorWeb"))
+                    .Create(update => update.Action("Inserir", "JogadorWeb"))
+                    .Update(update => update.Action("Atualizar", "JogadorWeb"))
+                    .Destroy(update => update.Action("Apagar", "JogadorWeb"));
+               }))
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        hideErrorMessage();
+        hideSuccessMessage();
+    });
+</script>

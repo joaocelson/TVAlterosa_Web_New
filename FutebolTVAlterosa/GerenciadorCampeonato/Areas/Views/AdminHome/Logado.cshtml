@@ -1,0 +1,28 @@
+﻿@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@using (Html.BeginForm("Logoff", "AdminHome"))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <div class="pull-left">
+        <a href="~/Admin/Partida/PaginaInicial">Partidas</a>
+    </div>
+    <br />
+    <div class="pull-left">
+        <a href="~/Admin/Bolao/PontuarBolao">Pontuar Bolao</a>
+    </div>
+    
+    <br />
+    <div class="pull-left">
+        <a href="~/Admin/Jogador/PaginaInicial">Jogadores</a>
+    </div>
+    <br />
+    <div class="pull-left">
+        <a href="~/Admin/Galeria/PaginaInicial">Fotos/Vídeos</a>
+    </div>
+}
+

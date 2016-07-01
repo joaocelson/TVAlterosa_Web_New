@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+    var usuario = "";
+}
+<h2></h2>
+
+@using (Html.BeginForm(FormMethod.Post))
+{
+
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+    <div>
+        @if (HttpContext.Current.User.Identity.IsAuthenticated)
+        {
+            usuario = HttpContext.Current.User.Identity.Name;
+        }
+    </div>
+    <br />
+    <div>
+        <a href="~/Admin/Bolao/Index">Bolão</a>
+    </div>
+}
+

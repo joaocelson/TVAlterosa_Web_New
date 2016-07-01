@@ -1,0 +1,87 @@
+﻿@{
+    ViewBag.Title = "Copa Alterosa Sub-20";
+}
+
+@{
+    ViewBag.Title = "Copa Alterosa Sub-20";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+<style>
+    .bs-glyphicons-list {
+        padding-left: 0;
+        list-style: none;
+    }
+
+    .bs-glyphicons li {
+        float: left;
+        width: 25%;
+        height: 115px;
+        padding: 10px;
+        font-size: 1.1vw;
+        line-height: 1.4;
+        text-align: center;
+        background-color: #f9f9f9;
+        border: 1px solid #fff;
+    }
+
+        .bs-glyphicons li:hover {
+            color: #fff;
+            background-color: #095186;
+            -webkit-transition-property: background color;
+            -webkit-transition-duration: 0.3s;
+            -webkit-transition-timing-function: ease;
+            -moz-transition-property: background color;
+            -moz-transition-duration: 0.3s;
+            -moz-transition-timing-function: ease;
+            -o-transition-property: background color;
+            -o-transition-duration: 0.3s;
+            -o-transition-timing-function: ease;
+            -ms-transition-property: background color;
+            -ms-transition-duration: 0.3s;
+            -ms-transition-timing-function: ease;
+            transition-property: background color;
+            transition-duration: 0.3s;
+            transition-timing-function: ease;
+        }
+
+    .bs-glyphicons {
+        margin: 0 -10px 20px;
+        overflow: hidden;
+    }
+
+        .bs-glyphicons .glyphicon-class {
+            display: block;
+            text-align: center;
+            word-wrap: break-word;
+        }
+
+        .bs-glyphicons .glyphicon {
+            margin-top: 5px;
+            margin-bottom: 10px;
+            font-size: 24px;
+        }
+</style>
+
+@*<div class="bs-glyphicons">
+    <ul class="bs-glyphicons-list">
+        <li onclick="location.href='@Url.Action("Consultar", "Equipe")';">
+            <span class="glyphicon glyphicon-pencil"></span>
+            <span class="glyphicon-class">Pontuar Bolao</span>
+        </li>
+        <li onclick="location.href='@Url.Action("Consultar", "TipoServico")';">
+            <span class="glyphicon glyphicon-user"></span>
+            <span class="glyphicon-class">Jogadores</span>
+        </li>
+        <li onclick="location.href='@Url.Action("Consultar", "OrdemServico")';">
+            <span class="glyphicon glyphicon-camera"></span>
+            <span class="glyphicon-class">Fotos/Vídeos</span>
+        </li>
+        <li onclick="location.href='@Url.Action("Consultar", "OrdemServico")';">
+            <span class="glyphicon glyphicon-envelope"></span>
+            <span class="glyphicon-class">Enviar Notificação App</span>
+        </li>
+    </ul>
+</div>*@

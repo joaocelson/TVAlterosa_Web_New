@@ -1,0 +1,50 @@
+﻿@model List<string[]>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        var contador = 0;
+    }
+
+    <h2>Classificação do Bolão</h2>
+
+    <table class="table table-striped">
+
+
+        @foreach (var item in Model)
+        {
+            <tr>
+
+                @if (contador == 0)
+                {
+                    <td>
+                        <h5>@Html.DisplayFor(modelItem => item[0])</h5>
+                    </td>
+                    <td>
+                        <h5>@Html.DisplayFor(modelItem => item[1])</h5>
+                    </td>
+                    <td>
+                        <h5>@Html.DisplayFor(modelItem => item[2])</h5>
+                    </td>
+                    contador = contador + 1;
+                }
+                else
+                {
+                    <td>
+                        @Html.DisplayFor(modelItem => item[0])º
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item[1])
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item[2])
+                    </td>
+                }
+
+            </tr>
+
+        }
+
+    </table>
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>

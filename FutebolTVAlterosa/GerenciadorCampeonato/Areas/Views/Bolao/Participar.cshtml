@@ -1,0 +1,114 @@
+﻿@model IEnumerable<Campeonato.Dominio.Partida>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        var palpite = true;
+    }
+    <!--
+        Implementação da Rádio Online
+               <iframe src="//www.spreaker.com/embed/player/standard?autoplay=false&episode_id=4429021" style="width: 100%; height: 131px; min-width: 400px;" frameborder="0" scrolling="no"></iframe>
+        -->
+    <style>
+        #comment-input {
+            width: 15px;
+            height: 20px;
+        }
+    </style>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div class="row-fluid">
+
+            @foreach (var item in Model)
+            {
+                if (palpite)
+                {
+                    DateTime dataPartida = item.DataPartida;
+                    DateTime novaData = new DateTime(dataPartida.Year, dataPartida.Month, dataPartida.Day, 07, 00, 00);
+                    if (DateTime.Now > novaData)
+                    {
+                        palpite = false;
+                    }
+                }
+
+                <div style="text-align:center">
+                    <h5> @Html.DisplayFor(modelItem => item.NomeCampeonato)</h5>
+                </div>
+                <table style="table-layout:fixed; width: 350px" align="center">
+                    <tr>
+                        <th width="40">
+                            @Html.DisplayFor(modelItem => item.Rodada)ª
+                        </th>
+                        <th width="60">
+                            Rodada
+                        </th>
+                        <td width="40">
+                            Data:
+                        </td>
+                        <th width="160">@Html.DisplayFor(modelItem => item.DataPartida)</th>
+                        <td width="40">
+                            Local:
+                        </td>
+                        <th width="120" align="left">@Html.DisplayFor(modelItem => item.LocalPartida)</th>
+                    </tr>
+                </table>
+                <table class="table" style="table-layout:fixed; width: 350px" align="center" border="2">
+                    <tr>
+                        <td width="40" style="text-align:center">
+                            <img src="~/Content/images/escudo/@item.EscudoPequenoMandante" height="100">
+                        </td>
+                        <td width="180" style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.TimeMandante)
+                        </td>
+                        <td align="center" width="30" style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.GolMandante, null, "comment-input", null)
+
+                        </td>
+                        <td align="center" width="5" style="text-align:center">
+                            X
+                        </td>
+                        <td align="center" width="30" style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.GolVisitante, null, "comment-input", null)
+                        </td>
+                        <td width="180" style="text-align:center">
+                            @Html.DisplayFor(modelItem => item.TimeVisitante)
+                        </td>
+                        <td width="40" style="text-align:center">
+                            <img src="~/Content/images/escudo/@item.EscudoPequenoVisitante" height="100">
+                        </td>
+                        @if (palpite)
+                        {
+                            if (DateTime.Now.DayOfWeek == DayOfWeek.Monday || DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
+                            {
+
+                            }
+                            else
+                            {
+                                <td><h4>@Html.ActionLink("Palpite", "Palpite", new { id = item.Id })</h4></td>
+                            }
+                        }
+
+
+                    </tr>
+                </table>
+                if (palpite == false)
+                {
+                    <div style="text-align:center"><h4>Bolão encerrado para esta rodada.</h4></div>
+
+                }
+                else
+                {
+                    if (DateTime.Now.DayOfWeek == DayOfWeek.Monday || DateTime.Now.DayOfWeek == DayOfWeek.Tuesday)
+                    {
+                        <div style="text-align:center"><h4>Bolão ainda não liberado</h4></div>
+                    }
+                }
+
+            }
+           
+        </div>
+    }
+

@@ -1,0 +1,64 @@
+﻿@model Campeonato.Dominio.Usuario
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+}
+
+<h2>Cadastrar</h2>
+
+@using (Html.BeginForm("Cadastrar", "Usuario")) 
+{
+    @Html.AntiForgeryToken()
+    
+    <div class="form-horizontal">
+        <h4>Usuario</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Nome: </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.NomeUsuario)
+                @Html.ValidationMessageFor(model => model.NomeUsuario)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class = "control-label col-md-2">E-mail ou Login: </div>
+            <div class="col-md-10">
+                @Html.EditorFor(model => model.LoginEmail)
+                @Html.ValidationMessageFor(model => model.LoginEmail)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Senha: </div>
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.Senha)
+                @Html.ValidationMessageFor(model => model.Senha)
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">Confirmar Senha: </div>
+            <div class="col-md-10">
+                @Html.PasswordFor(model => model.ConfirmaSenha)
+                @Html.ValidationMessageFor(model => model.ConfirmaSenha)
+            </div>
+        </div>
+
+
+       
+
+        <div class="form-group">
+            <div class="col-md-offset-2 col-md-10">
+                <input class="btn btn-primary btn-large" type="submit" value="Cadastrar"/>
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>

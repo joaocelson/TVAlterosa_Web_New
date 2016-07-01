@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Campeonato.Dominio.Campeonatos>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+    <div class="row-fluid">
+       
+        <p>
+            <!-- COMENTADO ATE ARRUMAR AUTENTICACAO
+                //@Html.ActionLink("Cadastrar Campeonato", "Cadastrar")
+                -->
+        </p>
+
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Campeonato
+                </th>
+                <th>
+                    Inicio
+                </th>
+
+                <th></th>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.ActionLink(@item.Nome, "TimesPorCampeonato", new { idCampeonato = item.Id })
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.DataInicio)
+                    </td>
+                    <td>
+                        <!--
+                            COMENTADO ATE ARRUMAR AUTENTICACAO
+                            @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                        @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                        @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })  |
+                        @Html.ActionLink("Selecionar Times", "SelecionarTimes", new { id = item.Id })
+                        -->
+                        @Html.ActionLink("Classificação", "Classificacao", new { id = item.Id }) |
+                        @Html.ActionLink("Tabela", "Tabela", new { id = item.Id }) |
+                    </td>
+                </tr>
+            }
+            <tr>
+                <td>@Html.ActionLink("Campeões por Ano 1ª Divisão", "CampeoesPorCampeonato", new { id = "1" }) </td>
+                <td> </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>@Html.ActionLink("Campeões por Ano 2ª Divisão", "CampeoesPorCampeonato", new { id = "2" }) </td>
+                <td> </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>

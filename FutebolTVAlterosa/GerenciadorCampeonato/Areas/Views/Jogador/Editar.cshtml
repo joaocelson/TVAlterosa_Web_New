@@ -1,0 +1,101 @@
+﻿@model Campeonato.Dominio.Jogador
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+}
+
+<h2>Editar</h2>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        $('#Campeonato').change(function () {
+            LoadRegion(this.value);
+        });
+
+        function LoadRegion(zoneCode) {
+
+            $.ajax({
+                type: "POST",
+                url: '@Url.Action("ListarTimesCampeonatoJSON", "Time")',
+                data: "{'idCampeonato':'" + zoneCode + "'}",
+                contentType: "application/json; charset=utf-8",
+                dataType: 'json',
+                cache: false,
+                success: function (data) {
+                    $('#Time').get(0).options.length = 0;
+                    $('#Time').get(0).options[0] = new Option("--Selecione--", "0");
+
+                    $.map(data, function (item) {
+                        $('#Time').get(0).options[$('#Time').get(0).options.length] = new Option(item.Nome, item.Id);
+                    });
+                },
+                error: function () {
+                    alert("Failed to load Item");
+                }
+            });
+        }
+
+    });
+</script>
+<h3>
+    Cadastro de Jogador
+</h3>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    <div style="text-align:center">
+        @Html.DropDownList("Campeonato", ViewData["Campeonatos"] as IEnumerable<SelectListItem>, "--Selecione--", new { @class = "LoginDropDown" })
+
+    </div>
+    <br />
+
+    <div style="text-align:center">
+        @Html.DropDownList("Time", Enumerable.Empty<SelectListItem>(), new { @class = "LoginDropDown" })
+    </div>
+    <br />
+
+    @Html.ValidationSummary(true)
+
+    <table style="table-layout:fixed; width: 350px" align="center">
+        <tr>
+            <td width="20">
+                Nome Jogador
+            </td>
+            <th width="20">
+                @Html.EditorFor(model => model.Nome)
+            </th>
+        </tr>
+        <tr>
+            <td width="20">
+                Foto:
+            </td>
+
+            <th width="160">@Html.EditorFor(model => model.Foto)</th>
+        </tr>
+        <tr>
+            <td width="20">
+                Posicao:
+            </td>
+            <th width="160" align="left">@Html.EditorFor(model => model.Posicao)</th>
+        </tr>
+        <tr>
+            <td width="20">
+                Descrição
+            </td>
+            <th width="160" align="left">@Html.EditorFor(model => model.Descricao)</th>
+        </tr>
+        <tr>
+            <td><input class="btn btn-primary btn-large" type="submit" value="Editar" /></td>
+        </tr>
+        <tr>
+            <td>@Html.ActionLink("Voltar", "Index")</td>
+        </tr>
+    </table>
+
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>

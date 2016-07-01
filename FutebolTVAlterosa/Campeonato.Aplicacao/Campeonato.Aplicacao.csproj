@@ -1,0 +1,103 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6FE10667-6CEB-4E95-8868-9D903369115C}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Campeonato.Aplicacao</RootNamespace>
+    <AssemblyName>Campeonato.Aplicacao</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Campeonato.RepositorioADO">
+      <HintPath>..\Campeonato.RepositorioADO\bin\Debug\Campeonato.RepositorioADO.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="NoticiaAplicacao.cs" />
+    <Compile Include="AcessoAplicacao.cs" />
+    <Compile Include="NoticiaAplicacaoConstrutor.cs" />
+    <Compile Include="AcessoAplicacaoConstrutor.cs" />
+    <Compile Include="BolaoAplicacao.cs" />
+    <Compile Include="BolaoAplicacaoConstrutor.cs" />
+    <Compile Include="FotoVideoAplicacao.cs" />
+    <Compile Include="FotoVideoAplicacaoConstrutor.cs" />
+    <Compile Include="JogadorAplicacao.cs" />
+    <Compile Include="JogadorAplicacaoConstrutor.cs" />
+    <Compile Include="UsuarioAplicacao.cs" />
+    <Compile Include="CampeonatoAplicacao.cs" />
+    <Compile Include="UsuarioAplicacaoConstrutor.cs" />
+    <Compile Include="CampeonatoAplicacaoConstrutor.cs" />
+    <Compile Include="ClassificacaoAplicacao.cs" />
+    <Compile Include="ClassificacaoAplicacaoConstrutor.cs" />
+    <Compile Include="PartidaAplicacao.cs" />
+    <Compile Include="PartidaAplicacaoConstrutor.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeAplicacao.cs" />
+    <Compile Include="TimeAplicacaoConstrutor.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Campeonato.Dominio\Campeonato.Dominio.csproj">
+      <Project>{d152b2d2-6cf9-4161-9514-dd373dfa65bb}</Project>
+      <Name>Campeonato.Dominio</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+    <None Include="Views\Shared\EditorTemplates\Color.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Date.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\DateTime-Local.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\DateTime.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\EmailAddress.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Month.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Number.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\PhoneNumber.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Search.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Time.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Url.cshtml" />
+    <None Include="Views\Shared\EditorTemplates\Week.cshtml" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

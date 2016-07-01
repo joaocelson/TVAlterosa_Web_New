@@ -1,0 +1,83 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Editar</h2>
+
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Partida</legend>
+
+            @Html.HiddenFor(model => model.Id)
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TimeMandante)
+                @Html.LabelFor(model => model.InverterMandante)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TimeMandante, null, htmlFieldName: "name=txtNomeMandante")
+                @Html.HiddenFor(model => model.IdTimeMandante)
+                @Html.CheckBoxFor(model => model.InverterMandante, htmlAttributes: "id=remarcada")
+                @Html.ValidationMessageFor(model => model.TimeMandante)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.TimeVisitante)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.TimeVisitante, null, htmlFieldName: "name=txtNomeVisitante")
+                @Html.HiddenFor(model => model.IdTimeVisitante)
+                @Html.ValidationMessageFor(model => model.TimeVisitante)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.LocalPartida)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.LocalPartida)
+                @Html.ValidationMessageFor(model => model.LocalPartida)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DataPartida)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DataPartida)
+                @Html.ValidationMessageFor(model => model.DataPartida)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Remarcada)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Remarcada)
+            </div>
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DataPartidaRemarcada)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DataPartidaRemarcada)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Rodada)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Rodada)
+                @Html.ValidationMessageFor(model => model.Rodada)
+            </div>
+            <p>
+                <input class="btn btn-primary btn-large" type="submit" value="Salvar" />
+            </p>
+        </fieldset>
+    }
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+</div>

@@ -1,0 +1,18 @@
+﻿.autoCompleteVeicFerroviarioContent{
+    position:relative;
+    height: 30px;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    padding-top:4px;
+}
+
+.autoCompleteVeicFerroviarioTitle {
+    font-weight:bold;
+    font-size:12px;
+}
+
+.autoCompleteVeicFerroviarioDesc {        
+    float: right;
+    left: 2px;
+    font-size: 10px;
+}

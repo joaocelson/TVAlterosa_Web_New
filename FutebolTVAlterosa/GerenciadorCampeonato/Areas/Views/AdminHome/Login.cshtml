@@ -1,0 +1,35 @@
+﻿@model Campeonato.Dominio.Usuario
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    
+    @using (Html.BeginForm())
+    { @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+        <div>
+            <div class="pagination-centered">
+
+                <fieldset>
+                    <div class="editor-label">
+                        E-mail ou Login
+                    </div>
+                    <div class="editor-field">
+                        @Html.EditorFor(model => model.LoginEmail)
+                        @Html.ValidationMessageFor(model => model.LoginEmail)
+                    </div>
+                    <div class="editor-label">
+                        Senha
+                    </div>
+                    <div class="editor-field">
+                        @Html.PasswordFor(model => model.Senha)
+                        @Html.ValidationMessageFor(model => model.Senha)
+                    </div>
+                </fieldset>
+                <input class="btn btn-primary btn-large" type="submit" value="Login" />
+            </div>
+        </div>
+    }
+</div>

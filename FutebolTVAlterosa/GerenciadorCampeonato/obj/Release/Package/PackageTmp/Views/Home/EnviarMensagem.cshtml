@@ -1,0 +1,90 @@
+﻿@using CORE.Componentes
+@model Campeonato.Dominio.Mensagem_Web
+
+<style>
+    div.col-md-3.col-sm-5.col-xs-9 {
+        height: 80px !important;
+    }
+
+    div.col-md-2.col-sm-5.col-xs-9 {
+        height: 80px !important;
+    }
+
+    div.col-md-6.col-sm-5.col-xs-9 {
+        height: 80px !important;
+    }
+</style>
+
+@{
+    ViewBag.Title = "Envio de Notificação";
+}
+
+@{
+    ViewBag.Title = "Envio de Notificação";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.MessageBoxes(TempData["successMessage"], Html.ValidationMessage("Error"))
+    </div>
+</div>
+
+@using (Html.BeginForm("Enviar", "Home", FormMethod.Post, new { id = "form-submit", role = "form", @class = "form-horizontal" }))
+{
+    <fieldset>
+        <div class="row" style="padding-left: 20px; padding-right: 20px;">
+            <div class="portlet">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="fa fa-reorder"></i>
+                        DADOS MENSAGEM
+                    </div>
+                    <div class="tools">
+                        <a href="javascript:;" class="collapse" id="imagemCollapse"></a>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <form class="form-horizontal" role="form">
+                        <div class="form-body">
+                            <div class="row">                                
+                                <div class="col-md-12">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <label class="btrp-detail-labels" style="padding-top: 10px">Título da Notificação:</label>
+                                        <div class="btrp-detail-inputs">
+                                            @(Html.Kendo().TextBoxFor(m => m.ContentTitle).Name("ContentTitle")
+                                                    .HtmlAttributes(new { @Style = "width:100%;" }))
+                                            @Html.ValidationMessageFor(m => m.ContentTitle, null, new { @class = "k-widget k-tooltip k-tooltip-validation k-invalid-msg" })                                            
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-md-12">
+                                    <div class="col-md-12 col-sm-12 col-xs-12">
+                                        <label class="btrp-detail-labels">Mensagem da Notificação:</label>
+                                        <div class="btrp-detail-inputs">
+                                            @(Html.Kendo().TextBoxFor(m => m.Message).Name("Message")
+                                                    .HtmlAttributes(new { @Style = "width:100%;" }))
+                                            @Html.ValidationMessageFor(m => m.Message, null, new { @class = "k-widget k-tooltip k-tooltip-validation k-invalid-msg" })
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <button id="saveButton" type="submit" value="Ok" class="btn btn-success"><i class="fa fa-save"></i> Enviar Mensagem</button>
+    </fieldset>
+}
+<script>
+    $(document).ready(function () {
+        //hideErrorMessage();
+        //hideSuccessMessage();
+    });
+</script>

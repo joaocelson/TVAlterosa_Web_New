@@ -1,0 +1,85 @@
+﻿@model IEnumerable<Campeonato.Dominio.Classificacao>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+    }
+
+  
+    <h2>Classificacao</h2>
+
+    <div class="row-fluid">
+
+        <table class="table-striped" align="center" style="text-align:center" width="960">
+            <tr>
+                <td style="text-align:left">
+                    Posição
+                </td>
+                <td style="text-align:left">
+                    Time
+                </td>
+
+                <td>
+                    | Pontos |
+                </td>
+                <td>
+                    Jogos |
+                </td>
+                <td>
+                    Vitórias |
+                </td>
+                <td>
+                    Derrotas |
+                </td>
+                <td>
+                    Empates |
+                </td>
+                <td>
+                    Gols Pro |
+                </td>
+                <td>
+                    Gols Contra |
+                </td>
+                <td>
+                    Saldo Gols
+                </td>
+            </tr>
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td style="text-align:left">
+                        @Html.DisplayFor(modelItem => item.Posicao)º
+                    </td>
+                    <td style="text-align:left" >
+                        @Html.DisplayFor(modelItem => item.NomeTime)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pontos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Jogos)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Vitoria)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Derrota)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Empate)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GolPro)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.GolContra)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.SaldoGol)
+                    </td>
+                </tr>
+            }
+        </table><p>
+            <!--<a href="https://www.facebook.com/groups/602547396436819/#" target="_blank"><img src="~/Content/images/facebook.png" border="0" /></a>-->
+        </p>
+
+        </div>

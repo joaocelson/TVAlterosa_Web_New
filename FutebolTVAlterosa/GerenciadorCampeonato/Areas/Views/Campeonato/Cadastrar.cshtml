@@ -1,0 +1,52 @@
+﻿@model Campeonato.Dominio.Campeonatos
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Cadastrar</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+        <fieldset>
+            <legend>Campeonatos</legend>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.Nome)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.Nome)
+                @Html.ValidationMessageFor(model => model.Nome)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.DataInicio)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.DataInicio)
+                @Html.ValidationMessageFor(model => model.DataInicio)
+            </div>
+
+            <div class="editor-label">
+                @Html.LabelFor(model => model.QuantidadeTime)
+            </div>
+            <div class="editor-field">
+                @Html.EditorFor(model => model.QuantidadeTime)
+                @Html.ValidationMessageFor(model => model.QuantidadeTime)
+            </div>
+
+            <p>
+                <input class="btn btn-primary btn-large" type="submit" value="Cadastrar" />
+            </p>
+        </fieldset>
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+
+</div>

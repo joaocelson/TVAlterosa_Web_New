@@ -1,0 +1,22 @@
+﻿.autoCompleteTerminalFerroviarioContent{
+    position:relative;
+    height: 50px;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    padding-top:3px;
+    line-height: 1.5;    
+}
+
+.autoCompleteTerminalFerroviarioTitle {
+    font-weight:bold;
+    font-size:10px;
+    display:block;
+}
+
+.autoCompleteTerminalFerroviarioDesc {
+    position: absolute;    
+    left: 2px;
+    font-size: 10px;
+    display:block;
+    padding-top:3px;
+}

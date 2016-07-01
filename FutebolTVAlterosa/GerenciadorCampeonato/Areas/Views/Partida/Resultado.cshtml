@@ -1,0 +1,177 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<style>
+    .comment input {
+        width: 18px;
+        height: 20px;
+    }
+
+    .invisivel {
+        display: none;
+    }
+
+    #direita {
+        width: 50%;
+        float: right;
+    }
+
+    #esquerda {
+        width: 50%;
+        float: left;
+    }
+
+    a.c_amarelo {
+        background: no-repeat top left url(/Content/images/icons/c_amarelo.png);
+        display: block;
+        text-indent: -9999px; /* hides the link text */
+    }
+
+    a.c_vermelho {
+        background: no-repeat top left url(/Content/images/icons/c_vermelho.png);
+        display: block;
+        text-indent: -9999px; /* hides the link text */
+    }
+
+    a.c_azul {
+        background: no-repeat top left url(/Content/images/icons/c_azul.png);
+        display: block;
+        text-indent: -9999px; /* hides the link text */
+    }
+
+    a.gol {
+        background: no-repeat top left url(/Content/images/icons/gol.png);
+        display: block;
+        text-indent: -9999px; /* hides the link text */
+    }
+</style>
+<h2>Resultado</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Partida</legend>
+        <table>
+            <tr>
+                <td width="80px">
+                    <div class="editor-label">
+                        @Html.DisplayFor(model => model.Rodada) ª Rodada
+                    </div>
+                </td>
+                <td width="200px">
+                    <div class=" editor-label">
+                        Local Partida: @Html.DisplayFor(model => @model.LocalPartida)
+                    </div>
+                </td>
+                <td width="300px">
+                    <div class=" editor-label">
+                        Data Partida:  @Html.DisplayFor(model => @model.DataPartida)
+                    </div>
+                </td>
+            </tr>
+
+        </table>
+        <br />
+        <div>
+            <div id="esquerda">
+                <table>
+                    <tr>
+                        <td><div class="editor-label">Time Mandante</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="editor-label">@Html.DisplayFor(model => model.TimeMandante)</div>
+                        </td>
+                        <td width="158px"></td>
+                        <td >
+                            <div class="comment" style="text-align:right">
+                                @Html.EditorFor(model => model.GolMandante, new { @class = "edit", style = "width:10px" })
+                            </div>
+                        </td>   
+                    </tr>
+                </table>
+            </div>
+            <div id="direita">
+                <table>
+                    <tr>
+                        <td><div class="editor-label">Time Visitante</div></td>
+                    </tr>
+                    <tr>
+                        <td>
+                            <div class="comment">
+                                @Html.EditorFor(model => model.GolVisitante, new { @class = "edit", style = "width:10px" })
+                            </div>
+                        </td>
+                        <td width="138px"></td>
+                        <td style="text-align:right">
+                            <div class=" editor-label">
+                            @Html.DisplayFor(model => model.TimeVisitante)
+</div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <div class="table table-striped">
+            <!--Lista de Jogadores Mandantes-->
+            <div id="esquerda">
+                <table>
+                    @foreach (var jogador in Model.TimeMandanteObj.ListaJogadores)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => jogador.Nome)
+                            </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_amarelo" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_vermelho" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_azul" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "gol" }) </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+            <!--Lista de Jogadores Visitantes-->
+            <div id="direita">
+                <table>
+                    @foreach (var jogador in Model.TimeVisitanteObj.ListaJogadores)
+                    {
+                        <tr>
+                            <td>
+                                @Html.DisplayFor(model => jogador.Nome)
+                            </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_amarelo" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_vermelho" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "c_azul" }) </td>
+                            <td>@Html.ActionLink("Button Name", "Index", null, new { @class = "gol" }) </td>
+                        </tr>
+                    }
+                </table>
+            </div>
+        </div>
+
+        <div class="bar-danger">
+            <input class="btn btn-primary btn-large" type="submit" value="Salvar" />
+        </div>
+        <div class="editor-field">
+            @Html.HiddenFor(model => model.Id)
+            @Html.HiddenFor(model => model.IdTimeMandante) &nbsp;
+            @Html.HiddenFor(model => model.IdCampeonato) &nbsp;
+            @Html.HiddenFor(model => model.IdTimeVisitante) &nbsp;
+            @Html.HiddenFor(model => model.PontosComputados) &nbsp;
+        </div>
+        
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+

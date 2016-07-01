@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Campeonato.Dominio.Time>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+                    
+    <!--
+    <p>
+        @Html.ActionLink("Cadastrar Time", "Cadastrar")
+    </p>
+        -->
+    <table class="table table-striped">
+        <tr>
+            <th></th>
+            <th>
+                <h4>Times</h4>
+            </th>
+            <th>
+                <h4> Data Fundação</h4>
+            </th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    <img src="~/Content/images/escudo/@item.EscudoPequeno" height="100">
+                </td>
+                <td>
+                    @Html.ActionLink(item.Nome, "Detalhes", new { id = item.Id })
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.DataFundacao)
+                </td>
+                <!--
+                       <td>
+                         @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                         @Html.ActionLink("Detalhes", "Detalhes", new { id = item.Id }) |
+                         @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+
+                     </td>
+                    -->
+            </tr>
+        }
+
+    </table>

@@ -1,0 +1,101 @@
+﻿@model IEnumerable<Campeonato.Dominio.Campeoes>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+        List<Campeonato.Dominio.Campeoes> listaCampeoes = new List<Campeonato.Dominio.Campeoes>();
+    }
+    <h2>Campeões geral</h2>
+    @foreach (var item in Model)
+    {
+        if (listaCampeoes.Count == 0)
+        {
+            listaCampeoes.Add(item);
+        }
+        else
+        {
+            bool inserir = false;
+            for (int i = 0; i < listaCampeoes.Count; i++)
+            {
+                if (!item.IdTime.Equals(listaCampeoes[i].IdTime))
+                {
+                    inserir = true;
+
+                }
+                else
+                {
+                    inserir = false;
+                    break;
+                }
+            }
+            if (inserir)
+            {
+                listaCampeoes.Add(item);
+            }
+        }
+
+    }
+
+    <table class="table table-striped">
+        <tr>
+            <td></td>
+            <th>
+                Time
+            </th>
+
+            <th>Nº Titulos</th>
+        </tr>
+
+        @foreach (var item in listaCampeoes)
+        {
+            <tr>
+
+                <td>
+                    <div class="display-label">
+                        <img src="~/Content/images/escudo/@item.EscudoPequeno" height="100">
+                    </div>
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.NomeTime)
+                </td>
+                <td>@Html.DisplayFor(modelItem => item.NumeroTitulos)</td>
+            </tr>
+        }
+    </table>
+
+
+    <br />
+
+
+    <div class="row-fluid">
+        <h2>Campeões por ano</h2>
+
+        <table class="table table-striped">
+            <tr>
+                <th>
+                    Ano Campeonato
+                </th>
+                <th>
+                    Time
+                </th>
+                <td></td>
+            </tr>
+
+            @foreach (var item in Model)
+            {
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => @item.AnoCampeonato)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.NomeTime)
+                    </td>
+                    <td>
+                        <div class="display-label">
+                            <img src="~/Content/images/escudo/@item.EscudoPequeno" height="100">
+                        </div>
+                    </td>
+                </tr>
+            }
+        </table>
+    </div>

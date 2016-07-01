@@ -1,0 +1,74 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<div class="row-fluid">
+    <h2>Cadastrar</h2>
+
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @Html.ValidationSummary(true)
+
+
+
+        <table style="table-layout:fixed; width: 350px" align="center">
+            <tr>
+                <th width="20">
+                    @Html.DisplayFor(modelItem => model.Rodada)ª
+                </th>
+                <th width="60">
+                    Rodada
+                </th>
+                <td width="40">
+                    Posicao:
+                </td>
+                <th width="160">@Html.DisplayFor(modelItem => model.DataPartida)</th>
+                <td width="40">
+                    Local:
+                </td>
+                <th width="160" align="left">@Html.DisplayFor(modelItem => model.LocalPartida)</th>
+            </tr>
+        </table>
+        
+<table class="table" style="table-layout:fixed; width: 350px" align="center" border="2">
+            <tr>
+                <td width="40" style="text-align:center">
+                    <img src="~/Content/images/escudo/@model.EscudoPequenoMandante" height="100"/>
+                </td>
+                <td width="180" style="text-align:center">
+                    @Html.DisplayFor(modelItem => model.TimeMandante)
+                </td>
+                <td align="center" width="20" style="text-align:center">
+                    @Html.DisplayFor(modelItem => model.GolMandante)
+                </td>
+                <td align="center" width="5" style="text-align:center">
+                    X
+                </td>
+                <td align="center" width="20" style="text-align:center">
+                    @Html.DisplayFor(modelItem => model.GolVisitante)
+                </td>
+                <td width="180" style="text-align:center">
+                    @Html.DisplayFor(modelItem => model.TimeVisitante)
+                </td>
+                <td width="40" style="text-align:center">
+                    <img src="~/Content/images/escudo/@model.EscudoPequenoVisitante" height="100">
+                </td>
+            </tr>
+        </table>
+        <p>
+            <input class="btn btn-primary btn-large" type="submit" value="Cadastrar" />
+        </p>
+    }
+
+    <div>
+        @Html.ActionLink("Voltar", "Index")
+    </div>
+
+    @section Scripts {
+        @Scripts.Render("~/bundles/jqueryval")
+    }
+</div>

@@ -1,0 +1,19 @@
+﻿.autoCompleteTremContent{
+    position:relative;
+    height: 40px;
+    border-bottom: 1px solid whitesmoke;
+    width: 100%;
+    padding-top:1px;
+}
+
+.autoCompleteTremPrefixo {
+    font-weight:bold;
+    font-size:12px;
+}
+
+.autoCompleteTremSaida {
+    position: absolute;
+    bottom: 1px;
+    left: 2px;
+    font-size: 10px;
+}

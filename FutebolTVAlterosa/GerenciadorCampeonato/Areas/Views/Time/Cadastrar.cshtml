@@ -1,0 +1,83 @@
+﻿@model Campeonato.Dominio.Time
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<script type="text/javascript">
+    $(document).ready(function ()
+ {
+     $('#file').MultiFile({
+         accept: 'gif|jpg',
+         max: 3, STRING:
+             {
+                 remove: 'Remover',
+                 denied: 'Tipo do arquivo inválido $ext!',
+                 duplicate: 'Esse arquivo já foi selecionado:\n$file!'
+             }
+     });
+ }); </script>
+
+
+<h2>Cadastrar</h2>
+@Html.Encode(ViewData["Message"])
+@using (Html.BeginForm("Cadastrar", "Time", System.Web.Mvc.FormMethod.Post, new { enctype = "multipart/form-data" }))
+{
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>Time</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Nome)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Nome)
+            @Html.ValidationMessageFor(model => model.Nome)
+        </div>
+        <div class="editor-label">
+            Presidente
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Presidente)
+            @Html.ValidationMessageFor(model => model.Presidente)
+        </div>
+        <div class="editor-label">
+            Telefone
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Telefone)
+            @Html.ValidationMessageFor(model => model.Telefone)
+        </div>
+        <div class="editor-label">
+            Data Fundação
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DataFundacao)
+            <!--@Html.ValidationMessageFor(model => model.DataFundacao)-->
+        </div>
+        <div class="editor-label">
+            Descrição
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Descricao)
+        </div>
+
+        <div class="editor-label">
+            Escudo
+        </div>
+        <div class="editor-field">
+
+            <input class="btn btn-primary btn-large"  type="file" name="ExcleFile" id="ExcleFile" value="Upload" />
+
+        </div>
+
+        <div class="editor-field">
+            <input class="btn btn-primary btn-large"  type="submit" value="Cadastrar" />
+        </div>
+    </fieldset>
+}
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>

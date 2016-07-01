@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Campeonato.Dominio.Partida>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+        Layout = "~/Views/Shared/_Layout.cshtml";
+    }
+
+
+    <div class="row-fluid">
+        <h3>Tabela</h3>
+
+        @foreach (var item in Model)
+        {
+            <table style="table-layout:fixed; width: 350px" align="center">
+                <tr>
+                    <th width="20">
+                        @Html.DisplayFor(modelItem => item.Rodada)ª
+                    </th>
+                    <th width="60">
+                        Rodada
+                    </th>
+                    <td width="40">
+                        Data:
+                    </td>
+                    <th width="160">@Html.DisplayFor(modelItem => item.DataPartida)</th>
+                    <td width="40">
+                        Local:
+                    </td>
+                    <th width="160" align="left">@Html.DisplayFor(modelItem => item.LocalPartida)</th>
+                </tr>
+            </table>
+            <table class="table" style="table-layout:fixed; width: 350px" align="center" border="2">
+                <tr>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@item.EscudoPequenoMandante" height="100">
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.TimeMandante)
+                    </td>
+                    <td align="center" width="20" style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.GolMandante)
+                    </td>
+                    <td align="center" width="5" style="text-align:center">
+                        X
+                    </td>
+                    <td align="center" width="20" style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.GolVisitante)
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(modelItem => item.TimeVisitante)
+                    </td>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@item.EscudoPequenoVisitante" height="100">
+                    </td>
+                </tr>
+            </table>
+           
+        }
+
+    </div>

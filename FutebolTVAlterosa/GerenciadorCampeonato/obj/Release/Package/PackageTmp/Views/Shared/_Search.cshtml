@@ -1,0 +1,29 @@
+﻿@using (Html.BeginForm("Consultar", "BuscaGenerica", FormMethod.Post, new
+{
+    @class = "search-form search-form-header",
+    id = "formPesquisa",
+    onsubmit = "return false;"
+}))
+{
+    <div class="input-icon right">
+        <i class="fa fa-search" id="iconePesquisa"></i>
+        <input type="text" class="form-control input-medium input-sm" name="txtPesquisa" id="txtPesquisa" placeholder="Pesquisar...">        
+    </div>
+}
+<script>
+    $("#txtPesquisa").keyup(function (event) {
+        if (event.keyCode == 13) {
+            submitSearchForm();
+        }
+    });
+
+    $("#iconePesquisa").click(function (e) {
+        submitSearchForm();
+    });
+
+    function submitSearchForm() {
+        if ($("#txtPesquisa").val() != null && $("#txtPesquisa").val() != '')
+            document.forms["formPesquisa"].submit();
+
+    }
+</script>

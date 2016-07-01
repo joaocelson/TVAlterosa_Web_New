@@ -1,0 +1,75 @@
+﻿@model Campeonato.Dominio.Time
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+
+}
+<link rel="stylesheet" type="text/css" href="~/Content/galeria/style.css" />
+<script type="text/javascript" src="~/Content/galeria/jquery.js"></script>
+
+
+<h2>Detalhes Time</h2>
+
+<fieldset>
+
+    <div class="display-label">
+        <img src="~/Content/images/escudo/@Model.EscudoPequeno" height="100">
+    </div>
+    <div class="display-label">
+        <b> @Html.DisplayNameFor(model => model.Nome):</b> @Html.DisplayFor(model => model.Nome)
+    </div>
+
+    <div class="display-field">
+        <b> Data Fundação:</b>  @Html.DisplayFor(model => model.DataFundacao)
+    </div>
+
+    <div class="display-label">
+        <b>  @Html.DisplayNameFor(model => model.Presidente):</b>  @Html.DisplayFor(model => model.Presidente)
+    </div>
+
+    <div class="display-label">
+        <b>  @Html.DisplayNameFor(model => model.Telefone):</b>  @Html.DisplayFor(model => model.Telefone)
+    </div>
+    <div class="display-label">
+        <b>    Descrição: </b> @Html.DisplayFor(model => model.Descricao)
+    </div>
+</fieldset>
+
+<div id="wowslider-container1">
+    <div class="ws_images">
+        <ul>
+            @foreach (var item2 in Model.ListaFotosVideos)
+            {
+                if (item2.Video.Equals("1"))
+                {
+                  
+                }
+                else
+                {
+                    <li><img src="@item2.Caminho" alt="@item2.Descricao" title="@item2.Descricao" id="wows1_0" /></li>
+                }
+            }
+
+        </ul>
+    </div>
+</div>
+
+<script type="text/javascript" src="~/Content/galeria/wowslider.js"></script>
+<script type="text/javascript" src="~/Content/galeria/script.js"></script>
+<br />
+<br />
+
+@foreach (var item in Model.ListaFotosVideos)
+{
+    if (item.Video.Equals("1"))
+    {<div style="text-align:center">
+        <iframe width="560" height="315" src="@item.Caminho" frameborder="0" allowfullscreen></iframe>
+    </div>
+    }
+}
+
+<br />
+<p>
+    @Html.ActionLink("Voltar", "Index")
+</p>

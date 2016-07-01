@@ -1,0 +1,197 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+}
+<style>
+    .comment input {
+        width: 18px;
+        height: 20px;
+    }
+
+    .invisivel {
+        display: none;
+    }
+</style>
+
+@using (Html.BeginForm("Salvar", "Bolao"))
+{
+    @Html.AntiForgeryToken()
+
+        <h4>Partida</h4>
+        <hr />
+        @Html.ValidationSummary(true)
+       <div class="invisible"> @Html.HiddenFor(model => model.Id)</div>
+        <div>
+            <table class="table" style="table-layout:fixed; width: 350px" align="center" border="2">
+                <tr>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@Model.EscudoPequenoMandante" height="100">
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(model => model.TimeMandante)
+                    </td>
+                    <td align="center" width="30" style="text-align:center">
+                        <div class="comment">
+                            @Html.EditorFor(model => model.GolMandante)
+                            @Html.ValidationMessageFor(model => model.GolMandante)
+                        </div>
+                          
+                    </td>
+                    <td align="center" width="5" style="text-align:center">
+                        X
+                    </td>
+                    <td align="center" width="30" style="text-align:center">
+                        <div class="comment">
+                            @Html.EditorFor(model => model.GolVisitante)
+                            @Html.ValidationMessageFor(model => model.GolVisitante)
+                        </div>
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(model => model.TimeVisitante)
+                    </td>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@Model.EscudoPequenoVisitante" height="100">
+                    </td>
+
+                </tr>
+            </table>
+        </div>
+    
+    
+    <div class="form-horizontal">
+        <div class="invisivel">
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdTimeMandante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IdTimeMandante)
+                    @Html.ValidationMessageFor(model => model.IdTimeMandante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdCampeonato, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IdCampeonato)
+                    @Html.ValidationMessageFor(model => model.IdCampeonato)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.IdTimeVisitante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.IdTimeVisitante)
+                    @Html.ValidationMessageFor(model => model.IdTimeVisitante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.LocalPartida, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.LocalPartida)
+                    @Html.ValidationMessageFor(model => model.LocalPartida)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataPartida, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DataPartida)
+                    @Html.ValidationMessageFor(model => model.DataPartida)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.DataPartidaRemarcada, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.DataPartidaRemarcada)
+                    @Html.ValidationMessageFor(model => model.DataPartidaRemarcada)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Remarcada, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Remarcada)
+                    @Html.ValidationMessageFor(model => model.Remarcada)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TimeMandante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TimeMandante)
+                    @Html.ValidationMessageFor(model => model.TimeMandante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.TimeVisitante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.TimeVisitante)
+                    @Html.ValidationMessageFor(model => model.TimeVisitante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EscudoPequenoMandante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EscudoPequenoMandante)
+                    @Html.ValidationMessageFor(model => model.EscudoPequenoMandante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.EscudoPequenoVisitante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.EscudoPequenoVisitante)
+                    @Html.ValidationMessageFor(model => model.EscudoPequenoVisitante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.Rodada, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Rodada)
+                    @Html.ValidationMessageFor(model => model.Rodada)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.InverterMandante, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.InverterMandante)
+                    @Html.ValidationMessageFor(model => model.InverterMandante)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.PontosComputados, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.PontosComputados)
+                    @Html.ValidationMessageFor(model => model.PontosComputados)
+                </div>
+            </div>
+
+            <div class="form-group">
+                @Html.LabelFor(model => model.NomeCampeonato, new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.NomeCampeonato)
+                    @Html.ValidationMessageFor(model => model.NomeCampeonato)
+                </div>
+            </div>
+
+        </div>
+        <div class="form-group">
+            <div style="text-align:center">
+                <input class="btn btn-primary btn-large" type="submit" value="Salvar" />
+            </div>
+        </div>
+    </div>
+}
+
+<div>
+    @Html.ActionLink("Voltar", "Index")
+</div>
+
+ 

@@ -1,0 +1,146 @@
+﻿@using System.Web.Mvc;
+@model CORE.Auth.Servicos.LogInModel
+@{
+    Layout = null;
+    ViewBag.Title = "Log in";
+}
+<!DOCTYPE html>
+<!--
+Template Name: Conquer - Responsive Admin Dashboard Template build with Twitter Bootstrap 3.0.3
+Version: 1.5.2
+Author: KeenThemes
+Website: http://www.keenthemes.com/
+Purchase: http://themeforest.net/item/conquer-responsive-admin-dashboard-template/3716838?ref=keenthemes
+-->
+<!--[if IE 8]> <html lang="en" class="ie8 no-js"> <![endif]-->
+<!--[if IE 9]> <html lang="en" class="ie9 no-js"> <![endif]-->
+<!--[if !IE]><!-->
+<html lang="en" class="no-js">
+<!--<![endif]-->
+<!-- BEGIN HEAD -->
+<head>
+    <meta charset="utf-8" />
+    <title>Login - Copa TV Alterosa Sub-20</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
+    <meta name="MobileOptimized" content="320">
+    <!-- BEGIN GLOBAL MANDATORY STYLES -->
+    <link href="~/Content/conquer/plugins/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/plugins/uniform/css/uniform.default.css" rel="stylesheet" type="text/css" />
+    <!-- END GLOBAL MANDATORY STYLES -->
+    <!-- BEGIN PAGE LEVEL STYLES -->
+    <link rel="stylesheet" type="text/css" href="~/Content/conquer/plugins/select2/select2_conquer.css" />
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <!-- BEGIN THEME STYLES -->
+    <link href="~/Content/conquer/css/style-conquer.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/css/style.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/css/style-responsive.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/css/plugins.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/css/themes/default.css" rel="stylesheet" type="text/css" id="style_color" />
+    <link href="~/Content/conquer/css/pages/login.css" rel="stylesheet" type="text/css" />
+    <link href="~/Content/conquer/css/custom.css" rel="stylesheet" type="text/css" />
+    <!-- END THEME STYLES -->
+    <link rel="shortcut icon" href="favicon.ico" />
+</head>
+<!-- BEGIN BODY -->
+<body class="login">
+    <!-- BEGIN LOGO -->
+    <div class="logo"></div>
+    <!-- END LOGO -->
+    <!-- BEGIN LOGIN -->
+    <div class="content">
+        <!-- BEGIN LOGIN FORM -->
+        @using (Html.BeginForm("LogIn", "Autenticacao", FormMethod.Post, new { @class = "login-form" }))
+        {
+            @Html.AntiForgeryToken()
+            @Html.HiddenFor(m => m.ReturnUrl)
+    <img src="~/Content/img/copaalterosa.png" alt="Super Onda" />
+            <h3 class="form-title">Autentique-se</h3>
+            if (!ViewData.ModelState.IsValid)
+            {
+                var errorLst = ViewData.ModelState.Values.SelectMany(i => i.Errors).Select(i => i.ErrorMessage);
+
+                <div class="alert alert-error" style="background: rgba(255, 160, 170, 0.8);">
+                    <button class="close" data-close="alert"></button>
+                    @foreach (var errorMsg in errorLst)
+                    {
+                        <span>@errorMsg</span><br />
+                    }
+                </div>
+            }
+
+            <div class="form-group">
+                <!--ie8, ie9 does not support html5 placeholder, so we just show field title for that-->
+                <label class="control-label visible-ie8 visible-ie9">Usuário</label>
+                <div class="input-icon">
+                    <i class="fa fa-user"></i>
+                    @(Html.TextBoxFor(i => i.UserName, new { @class = "form-control placeholder-no-fix", autocomplete = "on", placeholder = "Matrícula", id = "usuario" }))
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="control-label visible-ie8 visible-ie9">Senha</label>
+                <div class="input-icon">
+                    <i class="fa fa-lock"></i>
+                    @(Html.TextBoxFor(i => i.Password, new { @class = "form-control placeholder-no-fix", type = "password", autocomplete = "off", placeholder = "Senha" }))
+                </div>
+            </div>
+
+            <div class="form-actions">
+                <label class="checkbox">
+                    @(Html.CheckBoxFor(i => i.RememberMe))
+                    Mantenha-me conectado
+                </label>
+                <button type="submit" class="btn btn-info pull-right">
+                    Login
+                </button>
+            </div>
+        }
+        <!-- END LOGIN FORM -->
+    </div>
+    <!-- END LOGIN -->
+    <!-- BEGIN COPYRIGHT -->
+    <div class="copyright">
+        Acompanhamento Copa TV Alterosa Sub-20
+    </div>
+    <!-- END COPYRIGHT -->
+    <!-- BEGIN JAVASCRIPTS(Load javascripts at bottom, this will reduce page load time) -->
+    <!-- BEGIN CORE PLUGINS -->
+    <!--[if lt IE 9]>
+    <script src="~/Content/conquer/plugins/respond.min.js"></script>
+    <script src="~/Content/conquer/plugins/excanvas.min.js"></script>
+    <![endif]-->
+    <script src="~/Content/conquer/plugins/jquery-1.10.2.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/jquery-migrate-1.2.1.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/bootstrap/js/bootstrap.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/bootstrap-hover-dropdown/twitter-bootstrap-hover-dropdown.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/jquery-slimscroll/jquery.slimscroll.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/jquery.blockui.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/jquery.cokie.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/uniform/jquery.uniform.min.js" type="text/javascript"></script>
+    <!-- END CORE PLUGINS -->
+    <!-- BEGIN PAGE LEVEL PLUGINS -->
+    @*<script src="~/Content/conquer/plugins/backstretch/jquery.backstretch.min.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/plugins/jquery-validation/dist/jquery.validate.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="~/Content/conquer/plugins/select2/select2.min.js"></script>*@
+    <!-- END PAGE LEVEL PLUGINS -->
+    <!-- BEGIN PAGE LEVEL SCRIPTS -->
+    <script src="~/Content/conquer/scripts/app.js" type="text/javascript"></script>
+    <script src="~/Content/conquer/scripts/login.js" type="text/javascript"></script>
+    <!-- END PAGE LEVEL SCRIPTS -->
+    <script>
+        jQuery(document).ready(function () {
+            App.init();
+            Login.init();
+
+            $('#usuario').focus();
+        });
+    </script>
+    <!-- END JAVASCRIPTS -->
+</body>
+<!-- END BODY -->
+
+</html>

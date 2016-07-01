@@ -1,0 +1,81 @@
+15:15:58 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 2
+15:15:58 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 4
+15:16:00 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 3
+15:16:03 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 1
+15:16:03 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 2 x   timeVisitante.Id 4
+15:16:03 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 2 x   timeVisitante.Id 3
+15:16:03 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 2
+15:16:04 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 4 x   timeVisitante.Id 3
+15:16:04 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 4
+15:16:04 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 3
+15:16:30 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 2
+15:16:30 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 4
+15:16:30 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 1 x   timeVisitante.Id 3
+15:16:31 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 1
+15:16:31 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 2 x   timeVisitante.Id 4
+15:16:31 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 2 x   timeVisitante.Id 3
+15:16:31 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 2
+15:16:32 - Info - idCampeonatoSelecionado: 1 x   timeMandandate.Id 4 x   timeVisitante.Id 3
+15:16:32 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 4
+15:16:32 - Info - ClassificaçãoInserida: 1 x   timeMandandate.Id 3
+15:16:45 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 6
+15:16:45 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 7
+15:16:46 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 8
+15:16:46 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 5
+15:16:46 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 6 x   timeVisitante.Id 7
+15:16:46 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 6 x   timeVisitante.Id 8
+15:16:46 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 6
+15:16:47 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 7 x   timeVisitante.Id 8
+15:16:47 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 7
+15:16:47 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 8
+15:16:56 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 6
+15:16:57 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 7
+15:16:57 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 5 x   timeVisitante.Id 8
+15:16:57 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 5
+15:16:57 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 6 x   timeVisitante.Id 7
+15:16:58 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 6 x   timeVisitante.Id 8
+15:16:58 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 6
+15:16:58 - Info - idCampeonatoSelecionado: 2 x   timeMandandate.Id 7 x   timeVisitante.Id 8
+15:16:58 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 7
+15:16:59 - Info - ClassificaçãoInserida: 2 x   timeMandandate.Id 8
+15:17:11 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 10
+15:17:11 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 11
+15:17:11 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 12
+15:17:12 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 9
+15:17:12 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 10 x   timeVisitante.Id 11
+15:17:12 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 10 x   timeVisitante.Id 12
+15:17:12 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 10
+15:17:13 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 11 x   timeVisitante.Id 12
+15:17:13 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 11
+15:17:13 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 12
+15:17:43 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 10
+15:17:43 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 11
+15:17:44 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 9 x   timeVisitante.Id 12
+15:17:44 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 9
+15:17:44 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 10 x   timeVisitante.Id 11
+15:17:44 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 10 x   timeVisitante.Id 12
+15:17:44 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 10
+15:17:45 - Info - idCampeonatoSelecionado: 3 x   timeMandandate.Id 11 x   timeVisitante.Id 12
+15:17:45 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 11
+15:17:45 - Info - ClassificaçãoInserida: 3 x   timeMandandate.Id 12
+15:18:20 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 14
+15:18:20 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 15
+15:18:20 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 16
+15:18:20 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 13
+15:18:21 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 14 x   timeVisitante.Id 15
+15:18:21 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 14 x   timeVisitante.Id 16
+15:18:21 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 14
+15:18:21 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 15 x   timeVisitante.Id 16
+15:18:22 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 15
+15:18:22 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 16
+15:19:02 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 14
+15:19:02 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 15
+15:19:03 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 13 x   timeVisitante.Id 16
+15:19:03 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 13
+15:19:03 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 14 x   timeVisitante.Id 15
+15:19:03 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 14 x   timeVisitante.Id 16
+15:19:04 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 14
+15:19:04 - Info - idCampeonatoSelecionado: 4 x   timeMandandate.Id 15 x   timeVisitante.Id 16
+15:19:04 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 15
+15:19:04 - Info - ClassificaçãoInserida: 4 x   timeMandandate.Id 16
+20:11:22 - Info - PartidaRepositorioADO::ListarTabelPorCampeonato:. Erro ao consultar tabela

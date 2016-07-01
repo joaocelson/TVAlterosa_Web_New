@@ -1,0 +1,79 @@
+﻿@model Campeonato.Dominio.Partida
+
+@{
+    ViewBag.Title = "Futebol Lima Duarte";
+}
+
+<div>
+
+    <h2>Cadastrar Comentario</h2>
+
+    <div class="pagination-centered">
+        @using (Html.BeginForm("Comentar", "Partida"))
+        {
+            @Html.AntiForgeryToken()
+            @Html.ValidationSummary(true)
+
+
+            <input type="text" name="id" hidden="true" value="@Model.Id">
+
+            <table style="table-layout:fixed; width: 350px" align="center">
+                <tr>
+                    <th width="20">
+                        @Html.DisplayFor(modelItem => Model.Rodada)ª
+                    </th>
+                    <th width="60">
+                        Rodada
+                    </th>
+                    <td width="40">
+                        Data:
+                    </td>
+                    <th width="160">@Html.DisplayFor(modelItem => Model.DataPartida)</th>
+                    <td width="40">
+                        Local:
+                    </td>
+                    <th width="160" align="left">@Html.DisplayFor(modelItem => Model.LocalPartida)</th>
+                </tr>
+            </table>
+            <table class="table" style="table-layout:fixed; width: 350px" align="center" border="2">
+                <tr>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@Model.EscudoPequenoMandante" height="100">
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(modelItem => Model.TimeMandante)
+                    </td>
+                    <td align="center" width="20" style="text-align:center">
+                        @Html.DisplayFor(modelItem => Model.GolMandante)
+                    </td>
+                    <td align="center" width="5" style="text-align:center">
+                        X
+                    </td>
+                    <td align="center" width="20" style="text-align:center">
+                        @Html.DisplayFor(modelItem => Model.GolVisitante)
+                    </td>
+                    <td width="180" style="text-align:center">
+                        @Html.DisplayFor(modelItem => Model.TimeVisitante)
+                    </td>
+                    <td width="40" style="text-align:center">
+                        <img src="~/Content/images/escudo/@Model.EscudoPequenoVisitante" height="100">
+                    </td>
+                </tr>
+            </table>
+            <div style="align-content: center">
+                <textarea name="comentario" rows="10" cols="10" maxlength="200"></textarea>
+            </div>
+            <div style="align-content:center">
+                <input class="btn btn-primary btn-large" type="submit" value="Comentar" />
+            </div>
+
+        }
+
+        <div>
+            @Html.ActionLink("Voltar", "Index")
+        </div>
+    </div>
+
+</div>
+
+

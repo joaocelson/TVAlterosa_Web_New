@@ -1,0 +1,66 @@
+﻿@using CORE.Componentes
+@using Kendo.Mvc.UI
+@using System.Web
+@model IEnumerable<Campeonato.Dominio.Time_Web>
+
+@{
+    ViewBag.Title = "Manutenção Times";
+}
+
+@{
+    ViewBag.Title = "Manutenção Times";
+    var breadCrumbs = new List<KeyValuePair<string, string>>();
+    breadCrumbs.Add(new KeyValuePair<string, string>("/AdminHome/Index", "Home"));
+    breadCrumbs.Add(new KeyValuePair<string, string>("#", ViewBag.Title));
+    ViewBag.Breadcrumbs = breadCrumbs;
+}
+
+<div class="row">
+    <div class="col-md-12">
+        @Html.MessageBoxes(TempData["successMessage"], Html.ValidationMessage(""))
+    </div>
+    <div class="col-md-12">
+        @(Html.KendoGrid<Campeonato.Dominio.Time_Web>("timeGrid")
+                .ToolbarLimpar("gridAllFilterReset")
+                //.ToolbarExportarExcel("Exportar", "Jogadores.xls")
+                .Columns(columns =>
+                {
+                    columns.Bound(p => p.Id).Visible(false);
+                    columns.Template(x => { })
+                    .ClientTemplate("<a class='k-button k-button-icontext k-grid-details' data-placement='right' data-toggle='tooltip' href='/TimeWeb/AnexarEscudo/?id=#= Id#' title='Inserir Escudo'><span class='glyphicon glyphicon-camera'></span</a>").Width(40).Visible(true);
+                    columns.Bound(p => p.Nome).Title("Nome").Width(200);
+                    columns.Bound(p => p.Escudo).Title("Escudo").Width(200);
+                    columns.Bound(p => p.Presidente).Title("Presidente").Width(200);
+                    columns.Bound(p => p.Descricao).Title("Descrição").Width(200);
+                    columns.Bound(p => p.Telefone).Title("Telefone").Width(200).EditorTemplateName("Telefone");                    
+                })
+                .Editable(ed =>
+                {
+                    ed.Mode(GridEditMode.PopUp)
+                        .Window(w => w.Title("Manutenção de Times").Width(450));
+                })
+               .Pageable(i => i.PageSizes(new int[] { 25, 50, 100 }))
+               .DataSource(dataSource =>
+               {
+                   dataSource
+                    .Ajax()
+                    .Sort(sort => sort.Add(p => p.Nome).Ascending())
+                    .PageSize(25)
+                    .Events(events => events.Error("error_handler").Sync("sync_handler").RequestEnd("onRequestEnd"))
+                    .Model(model =>
+                    {
+                        model.Id(p => p.Id);
+                    })
+                    .Read(read => read.Action("Ler", "TimeWeb"))
+                    .Create(update => update.Action("Inserir", "TimeWeb"))
+                    .Update(update => update.Action("Atualizar", "TimeWeb"))
+                    .Destroy(update => update.Action("Apagar", "TimeWeb"));
+               }))
+    </div>
+</div>
+
+<script>
+    $(document).ready(function () {
+        
+    });
+</script>

@@ -1,0 +1,120 @@
+/* here you can put your own css to customize and override the theme */
+/***
+Horezantal Menu(new in v1.2)
+***/
+
+.header .hor-menu {
+  margin: 0;
+  float: left;
+}
+
+.header .hor-menu ul.nav li a {
+  font-size: 14px;
+  padding: 11px 18px; 
+}
+
+.header .hor-menu ul.nav li {
+  position: relative;
+}
+
+.header .hor-menu ul.nav li.current .selected,
+.header .hor-menu ul.nav li.active .selected {
+  left: 50%;
+  bottom:0;
+  position: absolute;
+  border-left: 6px solid transparent;
+  border-right: 6px solid transparent;
+  border-top: 6px solid #e02222;
+  display: inline-block;
+  margin: 0;
+  width: 0px;
+  height:0px;
+  margin-left: -7px;
+  margin-bottom:-6px;
+}
+
+
+/*drop-down*/
+.header .hor-menu .dropdown-menu {
+    margin-top: 0;
+    border: none;
+    box-shadow: none;
+}
+
+.header .hor-menu .dropdown-submenu > .dropdown-menu {
+  top: 0;
+}
+
+.header .hor-menu .dropdown-submenu > a:after {
+  top: 8px;
+  margin-right: 0px;
+} 
+
+.header .hor-menu .dropdown-menu li > a {
+    padding: 7px 18px !important; 
+    margin-bottom:1px;
+}
+
+.header .hor-menu .dropdown-menu .arrow {
+  display: none;
+}
+
+.header .hor-menu .dropdown-menu li > a:hover,
+.header .hor-menu .dropdown-menu li:hover > a,
+.header .hor-menu .dropdown-menu li.active > a {
+    filter:none !important;
+}
+
+.header .hor-menu .nav > li > .dropdown-menu:after,
+.header .hor-menu .nav > li > .dropdown-menu:before {
+    border-bottom: none !important;
+}
+
+/*search*/
+.header .hor-menu .hor-menu-search-form-toggler {
+    display: inline-block;
+    padding: 12px 22px 12px 22px !important;
+    cursor: pointer;
+    background: url(../img/hor-menu-search.png) no-repeat center;
+}
+
+.header .hor-menu .hor-menu-search-form-toggler:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.header .hor-menu a.hor-menu-search-form-toggler-close {
+  display: none;
+}
+
+.header .hor-menu .search-form {
+  margin: 0;
+  top:42px; 
+  right:0px; 
+  padding:8px; 
+  display:none;
+  z-index:999; 
+  position:absolute; 
+}
+
+.header .hor-menu .search-form .btn {
+  padding: 7px 20px; 
+  height: 32px;
+  width: 10px;
+  display: inline-block;
+}
+
+.header .hor-menu .search-form .btn:hover {
+  opacity: 0.8;
+  filter: alpha(opacity=80);
+}
+
+.header .hor-menu .search-form form {
+  margin-bottom: 0;
+}
+
+.header .hor-menu .search-form form input {
+  background: none;
+  width: 200px;
+  border: none;
+}

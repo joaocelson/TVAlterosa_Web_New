@@ -1,0 +1,15 @@
+@model DateTime?
+@using Kendo.Mvc.UI
+@{
+    var campo = ViewData.TemplateInfo.GetFullHtmlFieldName("");
+    //Faltando tirar o dia na visualizacao
+}
+
+@(Html.Kendo().DatePickerFor(m => m)
+    .Name(campo)
+    .Start(CalendarView.Year)
+    .Depth(CalendarView.Year)
+    .Footer(false)
+    .Format("01/MM/yyyy")
+    .ParseFormats(new[] { "MM/yyyy" })
+)

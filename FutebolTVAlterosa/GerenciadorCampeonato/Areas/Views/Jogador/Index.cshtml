@@ -1,0 +1,28 @@
+﻿@model IEnumerable<Campeonato.Dominio.Jogador>
+
+    @{
+        ViewBag.Title = "Futebol Lima Duarte";
+    }
+
+    <h2>Lista de Jogadores</h2>
+
+    <table class="table">
+        <th>
+            Nome Jogador
+        </th>
+        <th></th>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nome)
+                </td>
+                <td>
+                    @Html.ActionLink("Editar", "Editar", new { id = item.Id }) |
+                    @Html.ActionLink("Detalhar", "Detalhar", new { id = item.Id }) |
+                    @Html.ActionLink("Excluir", "Excluir", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
